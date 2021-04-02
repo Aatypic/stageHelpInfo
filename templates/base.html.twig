@@ -1,0 +1,66 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre #}
+{# Mars 2021 - Mai 2021 #}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Help Info{% endblock %}</title>
+        {# Bootstrap #}
+        {# Css #}
+        <link rel="stylesheet" href="style.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {# navbar et bannière dans le header #}
+        <header>
+        {# navbar #}
+        <nav></nav>
+        {# bannière #}
+        <div class="jumbotron jumbotron-fluid"></div>
+        </header>
+
+        {# contenu du site dans .content #}
+        <div class="content">
+        {% block body %}{% endblock %}
+        </div>
+
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
+{# Run `composer require symfony/webpack-encore-bundle` and uncomment the following Encore helpers to start using Symfony UX #}
+    {#{{ encore_entry_link_tags('app') }}#}
+    {#{{ encore_entry_script_tags('app') }}#}
+
+
+
+{# Emple de page avec controller #}
+{% extends 'basehi.html.twig' %}
+
+{% block banner %}
+<h1>Modules</h1>{% endblock %}
+
+{% block title %}Hello ModulesController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/stage.HELPINFO/Desktop/StageAAT/Code/modules/src/Controller/ModulesController.php'|file_link(0) }}">src/Controller/ModulesController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/stage.HELPINFO/Desktop/StageAAT/Code/modules/templates/modules/index.html.twig'|file_link(0) }}">templates/modules/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}

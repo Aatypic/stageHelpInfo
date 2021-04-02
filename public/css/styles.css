@@ -1,0 +1,255 @@
+/* #80cdbb vert de la bannière--
+-- #428ab2 bleu de la ""
+-- #234fa1 dark bleu " " -------
+*/
+
+
+@font-face  {
+  font-family: 'Dom Casual BT';
+  src: url('../fonts/dom-casual-bt.ttf');
+}
+
+/*taille et police de la barre de navigation*/
+/* modification/ajout 19mars adapatation Bootstrap v5 */
+.navbar {
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  padding: .5rem 1rem;
+}
+
+.navbar-brand{
+  font-size: 2.2em;
+  font-family:  'Dom Casual BT', arial, sans-serif;
+}
+.add-shadow {
+  box-shadow: 0px 4px 8px 0px #234fa1;
+}
+
+
+#assistance{
+  color: #ff944d;
+  font-weight: bold;
+}
+
+#assistance:hover{
+  color: #ff751a;
+}
+
+/*taille de la bannière, lien vers l'image*/
+/* modification/ajout 19mars adapatation Bootstrap v5 */
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+#banner-bg{
+  position: relative;
+  min-height: 225px;
+  background: url("../../images/chroma2.png");
+  background-size: cover;
+  margin-bottom: 2rem;
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+/*Nom de la page dans la bannière*/
+#textBanner{
+  text-shadow: 1px 1px 2px black;
+  color: white;
+}
+
+/* la page prend la hauteur total de l'écran au minimum et permet au footer d'être coller au bas de la page */
+html{
+  height: 100%;
+}
+/*police de la page et permet de fixer le footer au bas de la page */
+body{
+  
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: #f8f9fa;
+}
+/* ajout de padding 70px pour navbar passé en fixed-top */
+body {
+  padding-top: 70px;
+}
+
+/* ajouter 23mars pour la page intro et page contenu */
+.intro-banner {
+  display: flex;
+  flex-flow: row wrap ;
+  
+}
+/* pour utiliser tout l'espace des 100% via flex basis */
+.intro-banner > * {
+  flex: 1 100%;
+}
+.intro-banner h2 {
+  flex: 4;
+}
+.intro-banner span {
+  text-align: end;
+}
+.intro-banner span:nth-of-type(1) {
+  flex: 1;
+}
+.intro-banner span:nth-of-type(2) {
+  flex: 1;
+}
+
+.pourcent {
+  grid-area: pourcent;
+  justify-self: center;
+  color: orange;
+  font-weight: bold;
+}
+
+
+
+
+#footer{
+  margin-top: 20px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  background-color: #262626;
+  color: white;
+}
+/* modification/ajout 19mars adapatation Bootstrap v5 */
+footer .row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+/* modification/ajout 19mars adapatation Bootstrap v5 */
+.col-lg-5 {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#blocContact{
+  margin-top: 15px;
+  padding-bottom: 15px;
+  color: darkgray;
+}
+
+/* Style du logo et durée de transition quand survolé  */
+#facebook{
+  border-radius: 8px;
+  width: 30px;
+  height: auto;
+  transition: 1.5s;
+}
+
+#facebook:hover {
+  border-radius: 4px;
+  width: 50px;
+  transform: rotate(360deg);
+  margin-left: 5px;
+}
+
+
+/* centre l'image google dans sa colonne*/
+#blocMap{
+  text-align: center;
+}
+
+/*style de l'image google*/
+#mapGoogle{
+  border: 1px solid #f8f9fa;
+  border-radius: 8px;
+  padding: 5px;
+  width: 150px;
+}
+
+strong{
+  font-weight: normal;
+  font-family: 'Dom Casual BT', arial, sans-serif;
+  font-size: 1.5em;
+}
+
+em{
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* désactive le lien vers le telephone pour les d'ordinateur et tablettes */
+#tel{
+  pointer-events: none;
+  cursor: default;
+  color: darkgrey;
+}
+
+
+
+/* ---------------------------------
+------------MEDIA QUERRIES-----------
+-------------------------------------- */
+@media screen and (max-width: 992px) {
+
+  #assistance{
+    color: #808080;
+    font-weight: unset;
+  }
+
+  #assistance:hover{
+    color: black;
+  }
+
+  #tel{
+    color: dodgerblue;
+    pointer-events: unset;
+    cursor: pointer;
+  }
+
+  .content .container {
+    margin-top: unset;
+  }
+
+  #banner-bg{
+    margin-bottom: 20px;
+  }
+
+  #facebook{
+    border-radius: 8px;
+  }
+
+  /* désactive l'animation du logo facebook sur mobile*/
+  #facebook{
+    transition: none;
+  }
+  #facebook:hover {
+    width: 30px;
+    height: auto;
+    transform: none;
+    margin-left: none;
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  /*reduction hauteur de bannière pour mobile*/
+  #banner-bg{
+    min-height: 175px;
+  }
+
+  #footer{
+    padding-top: unset;
+  }
+
+}
+@media screen and (min-width: 1200px){
+.container {
+    max-width: 1140px;
+}
+}
+
+@media screen and (min-width: 576px){
+  #banner-bg {
+    padding: 4rem 2rem!important;
+  }
+}

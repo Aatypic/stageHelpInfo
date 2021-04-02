@@ -1,0 +1,47 @@
+{# ------ #}
+{# Ici page de login aux modules #}
+{# ------ #}
+{% extends "basehi.html.twig" %}
+
+	{% block stylesheets %}
+<link rel="stylesheet" href="css/login.css"> {% endblock %}
+
+{% block banner %}
+	<h1>Media</h1>
+{% endblock %}
+{# Pour les pages et le chemin en bannière revoir breadcrum de bootstrap #}
+{% block body %}
+
+	<div class="container">
+		{# bootstrap grid #}
+		<div class="row bloc-login">
+			<div class="col-lg">
+				{# Le formulaire de connexion #}
+				<form action="{{ path ('modules')}}" class="login">
+					<div class="intro-login">
+						<p>Pour accéder aux Modules, veuillez vous indentifier.</p>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="email" class="form-control" id="floatingInput" placeholder="nometprénom@exemple.com">
+						<label for="floatingInput">Adresse email</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="password" class="form-control" id="floatingPassword" placeholder="mot de passe">
+						<label for="floatingPassword">Mot de passe</label>
+					</div>
+					<div class="d-grid">
+					<button type="submit" class="btn btn-primary">Se connecter <i class="bi bi-caret-right-fill"></i></button>
+					</div>
+					<div class="help-login">
+						<p>Vous avez oublié votre mot de passe <a href=""><i class="bi bi-question-circle-fill" aria-label="Question" > </i> Faire une demande de récupération de mot de passe</a></p>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg" id="stan">
+				{# L'image à droite du formulaire de connexion #}
+				<img src="{{ asset('/images/stan.jpg')}}" title="Image par Yves Bernardi" alt="image de la place Stanislas, Nancy">
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}

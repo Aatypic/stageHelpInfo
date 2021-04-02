@@ -1,0 +1,56 @@
+
+.btn{
+  margin-bottom: 20px;
+}
+
+#telephone{
+  padding-top: 5px;
+}
+
+h3{
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
+
+h5{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.content .container{
+  border-radius: 50px 50px 50px 50px;
+  background-color: #f8f9fa;
+}
+
+#hrHoriz{
+  visibility: hidden;
+}
+
+
+@media screen and (max-width: 992px) {
+
+  /* désactive les liens de telechargements pour mobiles */
+  #teamviewer, #anydesk{
+    pointer-events: none;
+    cursor: not-allowed;
+    border-color: #6c757d;
+    background-color: #6c757d;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  h5{
+    padding-bottom: unset;
+  }
+
+  #hrHoriz{
+    visibility: visible;
+  }
+
+  .content .container{
+    padding-bottom: 15px;
+  }
+
+}

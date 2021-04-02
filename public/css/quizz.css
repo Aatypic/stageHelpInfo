@@ -1,0 +1,64 @@
+/* nav */
+/* banniere
+/* breadcrum */
+
+/* div .container */
+/* div .introbanner */
+/* h2 */
+/* --------hr--------- */
+
+/* div .d-grid .quizz */
+.quizz {
+    padding: 1em;
+}
+/* div .question-card */
+.question-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "titre-q"
+    "question"
+    "reponses";
+}
+
+    /* -- h5 */
+h5 {
+    grid-area: titre-q;
+}
+    /* -- p.question-texte */
+p {
+    grid-area: question;
+}
+
+    /* div.reponses-container */
+        /* div.list-group-item .ligne-reponse */
+.list-group-item {
+    border: 0;
+    padding: 0.75em;
+}
+            /* -- input[type=checkbox] */
+.form-check-input[type=checkbox]{
+    margin-right: .75em;
+}
+            /* -- label */
+        
+/* .feedback {
+    grid-area: feedback;
+} */
+/* --------hr--------- */
+
+/* --------BLOC------------ */
+/* d-grid submit-quizz */
+/* ------------------------- */
+em {
+    font-weight: initial;
+    font-style: italic;
+}
+@media screen and (min-width:768px){
+    .btn {
+        margin: 1em 3em;
+        width: 23vw;
+    }
+
+}

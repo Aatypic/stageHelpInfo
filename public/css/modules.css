@@ -1,0 +1,81 @@
+/* -------------------------------
+--------VUE en MOBILE-FIRST-------
+---------------------------------- */
+
+/* DIV container */
+
+/* ------DIV d-grid gap-3 bloc-modules -------*/
+
+/* ------A HREF lien pour aller au module choisi------ */
+.bloc-modules a {
+  text-decoration: none;
+  color: initial;
+}
+
+.bloc-modules a:hover {
+  color: initial;
+  /* transform: scale(1.01); */
+}
+/* ------DIV p-2 bg-light border module-card ------*/
+.module-card {
+  display: grid;
+  grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "type type . ."
+    "titre titre titre titre"
+    ". pourcent pages pages";
+}
+
+.border {
+  border-radius: 4px;
+  transition: 1s;
+  box-shadow: 0px 2px 2px 0px #dee2e6; /*base color bootstrap */
+}
+.border:hover {
+  box-shadow: 4px 2px 11px 0px #565656;
+}
+
+/* h3 .type-module */
+h3 {
+  grid-area: type;
+  font-size: 1em;
+  color: #565656;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* h2 .title-module */
+h2 {
+  grid-area: titre;
+}
+/* ------
+----------DIV right-card
+-------------------------------*/
+
+/* span .pourcent */
+
+/* span .pages-module */
+.pages-module {
+  grid-area: pages;
+  font-size: 0.875em;
+}
+
+/* ---------------------------------
+------------MEDIA QUERRIES-----------
+-------------------------------------- */
+@media screen and (min-width: 768px) {
+  .module-card {
+    height: 120px;
+  }
+  .module-card {
+    grid-template-columns: 0.1fr repeat(2, 1fr) 0.4fr;
+    grid-template-areas:
+      "type type . pourcent"
+      ". titre titre ."
+      ". titre titre pages";
+  }
+  .gap-3 {
+    gap: 1.5rem !important;
+  }
+}

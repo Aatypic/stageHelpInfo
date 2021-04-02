@@ -1,0 +1,199 @@
+{# Affichage de la page du Quizz, avec les questions correspondant au Module n #}
+
+{% extends "basehi.html.twig" %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="css/quizz.css">
+{% endblock %}
+
+{% block banner %}
+	<h1>Quizz</h1>
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="{{path ('modules')}}">Modules</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+						<span itemprop="title">CURRENT TITLE</span>
+						<meta itemprop="url" content="CURRENT URL"/>
+					</div>
+				</li>
+			</ol>
+		</nav>
+		<div class="intro-banner">
+			<h2>Mon titre du quizz BdD</h2>
+			<hr>
+		</div>
+		<div class="d-grid quizz">
+			<div class="question-card">
+				<h5>Question n1</h5>
+				<p class="question-texte">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, nulla?</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse">
+						<input type="checkbox" class="form-check-input" id="reponse01" name="reponse">
+						<label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse">
+						<input type="checkbox" class="form-check-input" id="reponse02" name="reponse">
+						<label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse">
+						<input type="checkbox" class="form-check-input" id="reponse03" name="reponse">
+						<label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse">
+						<input type="checkbox" class="form-check-input" id="reponse04" name="reponse">
+						<label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n2</h5>
+				<p class="question-texte">Earum praesentium tempore laboriosam cumque rerum expedita soluta alias tenetur.</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n3</h5>
+				<p class="question-texte">Recusandae ipsam, non necessitatibus corporis totam officiis beatae. Tempore, aliquid?</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n4</h5>
+				<p class="question-texte">Praesentium impedit odio quis quasi corporis placeat rerum neque et.</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n5</h5>
+				<p class="question-texte">Ea quae sapiente necessitatibus fuga, ad neque velit laudantium aliquam!</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n6</h5>
+				<p class="question-texte">Molestiae exercitationem voluptates odio sapiente impedit ea quisquam soluta dolor.</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n7</h5>
+				<p class="question-texte">Quos eaque corrupti ad similique tempora temporibus sit quibusdam aspernatur.</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n8</h5>
+				<p class="question-texte">Accusamus optio deserunt eligendi iste temporibus quam. Sint, porro veritatis.</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n9</h5>
+				<p class="question-texte">Facilis atque velit at numquam, assumenda veniam rem dolorem minima.</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="question-card">
+				<h5>Question n10</h5>
+				<p class="question-texte">Sequi perspiciatis nulla porro, facere maiores voluptatibus voluptate nam adipisci.</p>
+				<div class="list-group reponses-container">
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse01" name="reponse"><label for="1" class="reponse-texte">reponse 1</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse02" name="reponse"><label for="2" class="reponse-texte">reponse 2</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse03" name="reponse"><label for="3" class="reponse-texte">reponse 3</label>
+					</div>
+					<div class="list-group-item ligne-reponse"><input type="checkbox" class="form-check-input" id="reponse04" name="reponse"><label for="4" class="reponse-texte">reponse 4</label>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="d-grid submit-quizz">
+				<h4>Fin du questionnaire</h4>
+				<em>Je vérifie mes réponses une dernière fois..</em>
+				<button class="btn btn-primary">Valider</button>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

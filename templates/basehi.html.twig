@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta
+		charset="UTF-8">
+
+		<!-- Rend le site responsive sur mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>
+			{% block title %}Help Info
+			{% endblock %}
+		</title>
+
+		<!-- CSS de la bannière RGPD (cookieconsent.com) -->
+		<link
+		rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
+
+		<!-- logo HelpInfo dans l'onglet -->
+		<link
+		rel="icon" type="image/png" href="{{ asset('images/oldCleanLogo1.png')}}"/>
+
+		<!-- Bootstrap 5 CSS -->
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+		{# Bootstrap Icons #}
+		<link
+		rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+		<!-- Css personnalisé navbar, bannière et footer -->
+		<link
+		rel="stylesheet" style="text/css" href="{{ asset('css/styles.css')}}"/>
+
+		<!-- block permettant d'ajouter une feuille css à chaques pages qui étendent "base.html.twig" -->
+		{% block stylesheets %}{% endblock stylesheets %}
+
+	</head>
+
+	<body>
+		<header>
+
+			<!-- navbar -->
+			<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="{{ path('login')}}" id="logo">
+						<img src="{{ asset('images/oldCleanLogo1.png')}}" width="50px" height="50px" class="d-inline-block align-top" alt="Help Info">
+						Help Info
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="">Accueil</a>
+								{# {{ path('accueil') }} #}
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Actualités</a>
+								{# {{ path('actualites') }} #}
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Prestations</a>
+								{# {{ path('prestation') }} #}
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Solutions</a>
+								{# {{ path('solution') }} #}
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="assistance" href="">Assistance</a>
+								{# {{ path('assistance') }} #}
+							</li>
+							<!-- Onglet "Media" desactivé. (supprimer les balises commentaire pour l'activer)-->
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('login') }}">Media</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" href="">Références</a>
+								{# {{ path('references') }} #}
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#footer">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- fin navbar -->
+
+			<!-- Bannière -->
+			<div class="container-fluid bg-light p-5 " id="banner-bg">
+				<div class="text-center" id="textBanner"></br>
+				{% block banner %}{% endblock banner %}
+			</div>
+		</div>
+		<!-- Fin bannière -->
+	</body>
+</html></header><!-- le contenu du site est dans un bloc nommé content--><div class="content"> {% block body %}{% endblock %}
+</div>
+
+<!-- Footer fixé au bas de page-->
+<footer id="footer">
+	<div class="container">
+		<div class="row justify-content-around">
+			<div class="col-lg-5 text-center" id="blocContact">
+				<h5>Contact</h5>
+				<a href="tel:0383445549" id="tel">
+					03 83 44 55 49
+				</a><br>
+				42 rue Sergent Bobillot, 54000 Nancy
+				<br>
+				<a href="https://www.google.fr/maps/place/Help+Info/@48.6876037,6.1579247,17z/data=!3m1!4b1!4m5!3m4!1s0x4794a29b749417df:0x5e4da2dbbe3cb892!8m2!3d48.6876037!4d6.1601134" target="_blank">
+					Nos horaires
+				</a>
+				<br>
+				Retrouvez-nous sur
+				<span id="fbMargin"></span>
+				<a href="https://www.facebook.com/Helpinfo-102862271180558/" target="_blank">
+					<img src="{{ asset('images/fbWeb.webp')}}" alt="Facebook" id="facebook">
+				</a>
+			</div>
+
+			<div class="col-lg-5" id="blocMap">
+				<a href="https://www.google.fr/maps/place/Help+Info/@48.6876037,6.1579247,17z/data=!3m1!4b1!4m5!3m4!1s0x4794a29b749417df:0x5e4da2dbbe3cb892!8m2!3d48.6876037!4d6.1601134" target="_blank">
+					<img src="{{ asset('images/helpinfoMap.png')}}" alt="Position google" id="mapGoogle">
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- fin footer -->
+
+<!-- block script -->
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="js/scroll.js"></script>
+<!-- script RGPD -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+	window.cookieconsent.initialise({
+"palette": {
+"popup": {
+"background": "#252e39"
+},
+"button": {
+"background": "#14a7d0"
+}
+},
+"showLink": false,
+"theme": "classic",
+"position": "bottom",
+"content": {
+"message": "Le respect de votre vie privée est notre priorité.\n" + "Nos partenaires et nous-mêmes exploitons différentes technologies, telles que celle des cookies, \n" + "mais nous ne conservons, ni ne traitons aucune donnée à caractère personnel, " + "telles que les adresses IP ou les identifiants de cookie.",
+"dismiss": "J'ai compris!"
+}
+});
+</script>
+<!-- fin script RGPD -->
+
+{% block javascripts %}{% endblock %}</body></html>

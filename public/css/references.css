@@ -1,0 +1,68 @@
+#clients{
+  border-radius: 50px;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+}
+
+#clients img{
+  height: auto;
+  width: 200px;
+  border-radius: 8px;
+}
+
+#partenaires h4{
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.row{
+  padding-bottom: 25px;
+}
+
+#partenaires img{
+  width: 90%;
+  height: auto;
+}
+
+#ms img{
+  width: 110%;
+  height: auto;
+}
+
+#hp img{
+  width: 75%;
+  height: auto;
+}
+
+p{
+  font-size: 0.9em;
+}
+
+
+@media screen and (max-width: 992px) {
+
+  .row{
+    padding-bottom: unset;
+  }
+
+  #clients img{
+    margin-bottom: 25px;
+  }
+
+  #partenaires{
+    text-align: center;
+  }
+
+  #partenaires img{
+    margin-bottom: 15px;
+    width: auto;
+    height: 40px;
+  }
+
+  #ms img{
+    width: auto;
+    height: 30px;
+  }
+}
+

@@ -1,0 +1,37 @@
+.content .container {
+  border-radius: 50px 50px 50px 50px;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.content img{
+  height: auto;
+  width: 90%;
+  border-radius: 35px 25px 25px 35px;
+  margin-left: 10px;
+}
+
+.content p, li{
+  text-align: justify;
+}
+
+/* Css pour I.E 10 & 11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #footer{
+    margin-top: 153px;
+  }
+}
+
+/* responsive css */
+@media screen and (max-width: 992px){
+  #stan {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .content img{
+    margin-left: unset;
+  }
+
+}

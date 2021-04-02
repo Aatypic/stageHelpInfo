@@ -1,0 +1,40 @@
+/* titre article RSS */
+b{
+  font-family:  arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.content *{
+  text-align: justify;
+}
+
+.content a{
+  text-align: end;
+}
+
+#actuBorder{
+  border-radius: 25px 25px 25px 25px;
+  background-color: #f8f9fa;
+
+  padding-top: 20px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 992px) {
+
+  #actuBorder{
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+
+  .jumbotron{
+    margin-bottom: 20px;
+  }
+
+}
+
+

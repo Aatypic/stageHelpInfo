@@ -1,0 +1,100 @@
+
+/* -------------------------------
+--------VUE en MOBILE-FIRST-------
+---------------------------------- */
+
+/* Le container */
+.content .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+.bloc-login {
+    align-items:center;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+/* GAUCHE le formulaire + class login CENTRER EN DESKTOP */
+form {
+    width: 85%;
+    /* margin-bottom: 10vh; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* les div du formulaires une marge */
+form div {
+    margin: 1rem;
+}
+
+.intro-login p {
+    margin-left: 1px;
+    font-weight: 400;
+}
+/* div + class form floating  */
+
+/* Le input */
+
+/* Le label */
+
+/* div + class d-grid */
+/* Le button avec class btn btn-primary */
+/* gradient du btn-primary */
+/* https://mycolor.space/gradient?ori=to+left&hex=%23428AB2&hex2=%2380CDBB&sub=1 */
+.btn-primary{
+    background-image: linear-gradient(to right, #428ab2, #419cb9, 
+                    #4dadbc, #64bebc, #80cdbb);
+    border: none;
+    transition: 1s;
+    font-weight: 700;
+    text-shadow: 1px 1px black;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-primary:hover, .btn-primary:active {
+    background-image: linear-gradient(to left, #428ab2, #419cb9, 
+                    #4dadbc, #64bebc, #80cdbb);
+}
+/* le texte de d'aide ? */
+.help-login a {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    font-weight: bolder;
+}
+.bi-question-circle-fill{
+    font-size: 23px;
+}
+
+
+
+/* ------DROITE l'image de stan NONE EN MOBILE------ */
+#stan {
+    display: none;
+}
+.content img{
+    height: auto;
+    width: 90%;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+
+/* -------------------------------
+--------VUE en DESKTOP------------
+---------------------------------- */
+
+/*ici en VUE PLUS GRANDE on réduit le bouton pour adapter l'image */
+@media screen and (min-width: 768px){
+    .d-grid{
+        width: 50%;
+        margin-left: 1em;
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    #stan {
+        display: initial;
+    }
+}

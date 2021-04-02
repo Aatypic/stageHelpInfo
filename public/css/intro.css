@@ -1,0 +1,35 @@
+/* -------------------------------
+--------VUE en MOBILE-FIRST-------
+---------------------------------- */
+
+h2 {
+    color: red;
+}
+
+.button-intro {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+.btn{
+    background-image: linear-gradient(to right, #428ab2, #419cb9, #4dadbc, #64bebc, #80cdbb);
+    border: none;
+    transition: 1s;
+    font-weight: 700;
+    text-shadow: 1px 1px black;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-primary:hover, .btn-primary:active {
+    background-image: linear-gradient(to left, #428ab2, #419cb9, 
+                    #4dadbc, #64bebc, #80cdbb);
+}
+
+@media screen and (min-width: 768px){
+    .content {
+        min-height: 40vh;
+    }
+}

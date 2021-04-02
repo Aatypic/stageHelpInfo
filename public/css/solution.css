@@ -1,0 +1,32 @@
+strong{
+  font-family: 'Dom Casual BT', arial, sans-serif;
+  font-size: x-large;
+  font-weight: normal;
+}
+
+em{
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.content h4, h3, h2{
+  text-align: center;
+}
+
+.content .card-body{
+  text-align: justify;
+}
+
+.content img{
+  padding-bottom: 15px;
+  padding-left: 10%;
+}
+
+@media only screen and (max-width: 960px){
+
+  .content img{
+    padding-left: unset;
+    width: 100%;
+  }
+
+}
