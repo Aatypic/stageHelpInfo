@@ -72,7 +72,7 @@ h2 {
     grid-template-columns: 0.1fr repeat(2, 1fr) 0.4fr;
     grid-template-areas:
       "type type . pourcent"
-      ". titre titre ."
+      ". titre titre pages"
       ". titre titre pages";
   }
   .gap-3 {
