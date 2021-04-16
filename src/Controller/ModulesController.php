@@ -15,13 +15,13 @@ class ModulesController extends AbstractController
     /**
      * @Route("/modules", name="modules")
      */
-    public function index(): Response
+    public function modules(): Response
     {
         $repo = $this->getDoctrine()->getRepository(Modules::class);
 
         $modules = $repo->findAll();
 
-        return $this->render('modules/index.html.twig', [
+        return $this->render('modules/modules.html.twig', [
             'controller_name' => 'ModulesController',
             'modules' => $modules
         ]);

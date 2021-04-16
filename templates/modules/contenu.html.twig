@@ -1,11 +1,13 @@
+{# Affichage du de la page n Module en fonction des Modules #}
+
 {% extends "basehi.html.twig" %}
 
-{% block banner %}
-	<h1>Modules</h1>
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset ('css/contenu.css')}}">
 {% endblock %}
 
-{% block stylesheets %}
-	<link rel="stylesheet" href="css/contenu.css">
+{% block banner %}
+	<h1>Module :  {{ module.titre }}</h1>
 {% endblock %}
 
 {% block body %}
@@ -23,14 +25,21 @@
 			<span class="pourcent">ici %!</span>
 			<span class="pages">{{ module.nbPages }}
 				pages</span>
+			<hr>
 		</div>
-		<hr>
-		<div class="contenu-text">
-			<p>{{contenu.text}}</p>
-			<img src="http://place-hold.it/350x150" alt="placeholder"></img>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum enim quam magni, laborum, animi vitae cumque nulla natus, architecto nesciunt odit. Molestias commodi quas necessitatibus debitis. Aliquam illum quae fugiat ullam accusantium suscipit, reiciendis quasi, expedita quo nesciunt, fuga inventore.</p>
-		<p>Reprehenderit adipisci impedit voluptatibus, dicta molestiae a sit consectetur, deleniti, distinctio delectus provident earum amet? Ratione obcaecati, facilis, corporis excepturi minus magnam officia ullam ad quam laudantium dicta. Officia, eius.</p>
-		<img src="http://place-hold.it/350x150" alt="placeholder"></img>
-	<p>Facilis magni ullam, voluptatem aut porro debitis cupiditate modi excepturi quos, numquam nemo delectus commodi. Temporibus doloremque aut recusandae minus magni autem, ex, quaerat necessitatibus aperiam alias et ipsam dolor quis at maiores quam adipisci, iste iure enim qui asperiores!</p>
-	<a href="#" class="button-n-page btn btn-primary">Page suivante</a>
-</div></div>{% endblock %}
+
+		<!-- Bloc avec le contenu de la pageModule -->
+		<div class="d-grid bloc-contenu">
+			<div class="bloc-text">
+				<p>{{ contenu.text }}</p>
+			</div>
+			<div class="bloc-image">
+				<img src="/images/imagesModules/{{ contenu.image }}" alt="placeholder"></img>			
+			</div>
+			<div class="bloc-n-page">
+				<a href="#" class="button-n-page btn btn-primary">Page suivante</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
