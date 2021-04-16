@@ -2,3 +2,6 @@
 --------VUE en MOBILE-FIRST-------
 ---------------------------------- */
 
+.bloc-image img {
+    width: 375px;
+}
