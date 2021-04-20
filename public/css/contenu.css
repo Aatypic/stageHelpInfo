@@ -3,5 +3,7 @@
 ---------------------------------- */
 
 .bloc-image img {
-    width: 375px;
+    width: 355px;
+    margin: 0;
 }
+

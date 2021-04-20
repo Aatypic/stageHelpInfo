@@ -22,9 +22,13 @@
   grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
   grid-template-rows: auto;
   grid-template-areas:
-    "type type . ."
+    "type type pourcent pourcent"
     "titre titre titre titre"
-    ". pourcent pages pages";
+    ". . pages pages";
+}
+
+.pourcent, .pages-module {
+  justify-self: end;
 }
 
 .border {
@@ -72,10 +76,14 @@ h2 {
     grid-template-columns: 0.1fr repeat(2, 1fr) 0.4fr;
     grid-template-areas:
       "type type . pourcent"
-      ". titre titre pages"
+      ". titre titre ."
       ". titre titre pages";
   }
   .gap-3 {
     gap: 1.5rem !important;
+  }
+
+  .pourcent, .pages-module {
+    justify-self: center;
   }
 }
