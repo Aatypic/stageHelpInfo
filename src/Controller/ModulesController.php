@@ -38,7 +38,7 @@ class ModulesController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(PageModule::class);
 
         $module = $repo1->find($id);
-        $pageModule = $repo->find($modules_id = $id);
+        $pageModule = $repo->find($id);
 
         return $this->render('modules/contenu.html.twig', [
             'module' => $module,
