@@ -31,42 +31,21 @@ class ModulesController extends AbstractController
     /**
      *  @Route("/contenu/{id}", name="contenu")
      */
-    public function contenu(ModulesRepository $repoM): Response
-    //public function contenu(Modules $module, PageModule $pageModule)
-        {
+    public function contenu($id): Response
+     //public function contenu(Modules $module, PageModule $pageModule)
+    {
+        $repoM = $this->getDoctrine()->getRepository(Modules::class);
+        $repoP = $this->getDoctrine()->getRepository(PageModule::class);
+
+        $module = $repoM->find($id);
+        $pageModule = $repoP->findBy([],['modules' => 'asc']);
+
             return $this->render('modules/contenu.html.twig', [
-                'modules' => $repoM->findby($id),
-            ]);
+                'module' => $module,
+                'contenu' => $pageModule
+        ]);
         }
 
-    public function contenuP(PageModuleRepository $repoPm)
-    {
-        return $this->render('modules/contenu.html.twig', [
-            'contenu'=> $repoPm->findBy(['modules_id']),
-        ]);
-    }
-    // {
-    //     $repoM = $this->getDoctrine()->getRepository(Modules::class);
-    //     $repoP = $this->getDoctrine()->getRepository(PageModule::class);
-
-    //     $module = $repoM->find($id);
-    //     $pageModule = $repoP->find($id);
-    //     /* $pageModule = $repoP->findBy([],['modules' => 'asc']); */
-
-    //         return $this->render('modules/contenu.html.twig', [
-    //             'module' => $module,
-    //             'contenu' => $pageModule
-    //     ]);
-    //     }
-
-    /**
-     *  @Route("/contenu/{id}", name="contenu")
-     */
-    // public function index()
-    // {
-    //     ;
-    // }
-    
 
     /**
      * @Route("/", name="login")
