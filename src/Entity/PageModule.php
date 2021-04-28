@@ -33,6 +33,11 @@ class PageModule
      */
     private $modules;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $page;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class PageModule
     public function setModules(?Modules $modules): self
     {
         $this->modules = $modules;
+
+        return $this;
+    }
+
+    public function getPage(): ?int
+    {
+        return $this->page;
+    }
+
+    public function setPage(int $page): self
+    {
+        $this->page = $page;
 
         return $this;
     }

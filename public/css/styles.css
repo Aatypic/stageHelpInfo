@@ -101,15 +101,36 @@ body {
   flex: 1;
 }
 
+
+/* Bloc logged-in de l'utilisateur */
+.logged-in {
+  justify-content: space-around;
+  text-align: right;
+  padding-right: 1rem;
+}
+.logged-in a {
+  text-decoration: none;
+  font-weight: bold;
+  color: unset;
+  transition: border 0.2s linear;
+}
+.logged-in a:hover, .logged-in a:focus {
+  border-bottom: linear-gradient(to right, #428ab2, #419cb9, 
+  #4dadbc, #64bebc, #80cdbb) 3px solid;
+}
+
+.bi {
+  font-size: 19px;
+}
+
+
+/* Pourcentage de progression de l'utilisateur */
 .pourcent {
   grid-area: pourcent;
   justify-self: center;
   color: orange;
   font-weight: bold;
 }
-
-
-
 
 #footer{
   margin-top: 20px;

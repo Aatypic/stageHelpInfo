@@ -89,8 +89,16 @@
 			</div>
 		</div>
 		<!-- Fin bannière -->
-	</body>
-</html></header><!-- le contenu du site est dans un bloc nommé content--><div class="content"> {% block body %}{% endblock %}
+</html>
+</header>
+<!-- le contenu du site est dans un bloc nommé content-->
+<div class="content">
+{% if app.user %}
+        <div class="logged-in mb-3">
+            <i class="bi bi-person-circle"></i> {{ app.user.username }} <a href="{{ path('app_logout') }}"><i class="bi bi-box-arrow-right"></i>Se deconnecté</a>
+        </div>
+    {% endif %}
+{% block body %}{% endblock %}
 </div>
 
 <!-- Footer fixé au bas de page-->
@@ -151,4 +159,6 @@
 </script>
 <!-- fin script RGPD -->
 
-{% block javascripts %}{% endblock %}</body></html>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

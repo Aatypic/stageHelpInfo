@@ -12,7 +12,13 @@ Ici page des modules > une fois connecté
 {% endblock %}
 
 {% block body %}
+	{# Make sure you're rendering success flash messages, affichage du message de succès de co. #}
+	{% for message in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+
 	<div class="container px-4">
+		
 		<div class="d-grid gap-3 bloc-modules">
 			{% for module in modules %}
 				<a href="{{ path ('page', {'id': module.id}) }}">

@@ -1,0 +1,47 @@
+{# Affichage du de la page n Module en fonction des Modules #}
+
+{% extends "basehi.html.twig" %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset ('css/page.css')}}">
+{% endblock %}
+
+{% block banner %}
+	<h1>Module :  {{ module.titre }}</h1>
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="{{ path ('modules')}}">Modules</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">{{ module.titre }}</li>
+			</ol>
+		</nav>
+		<div class="intro-banner">
+			<h2>{{ module.titre}}</h2>
+			<span class="pourcent">ici %!</span>
+			<span class="pages">{{ module.nbPages }}
+				pages</span>
+			<hr>
+		</div>
+
+		<!-- Bloc avec le page de la pageModule -->
+		<div class="d-grid bloc-page">
+			{% if pages is defined %}
+			<div class="bloc-text">
+				<p>{{ pages.text | raw }}</p>
+			</div>
+			<div class="bloc-image">
+				<img src="/images/imagesModules/{{ pages.image }}" alt="placeholder"></img>			
+			</div>
+			<div class="bloc-n-page">
+				<a href="#" class="button-n-page btn btn-primary">Page suivante</a>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+
+{% endblock %}
