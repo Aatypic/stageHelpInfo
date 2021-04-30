@@ -6,6 +6,7 @@ use App\Repository\ModulesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=ModulesRepository::class)
@@ -23,6 +24,12 @@ class Modules
      * @ORM\Column(type="string", length=255)
      */
     private $titre;
+
+    /**
+     * @Gedmo\Slug(fields={"titre"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     /**
      * @ORM\Column(type="smallint")
@@ -49,6 +56,12 @@ class Modules
         $this->pageModules = new ArrayCollection();
     }
 
+    //-----Ici on créer une fonction pour permettre à notre EntityType comme ca on bien les noms des Modules 
+    public function __toString()
+    {
+        return $this->titre;
+    }
+    // ------------
     public function getId(): ?int
     {
         return $this->id;
@@ -65,6 +78,19 @@ class Modules
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    // ----Gedmo s'occupe maintenant de créer lui meme le slug----
+    // public function setSlug(string $slug): self
+    // {
+    //     $this->slug = $slug;
+
+    //     return $this;
+    // }
 
     public function getNbPages(): ?int
     {

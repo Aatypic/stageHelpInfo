@@ -32,6 +32,7 @@
 		<div class="d-grid bloc-page">
 			{% for page in pages %}
 				<div class="bloc-text">
+				<h3>{{ page.sousTitre | raw }}</h3>
 				<p>{{ page.text | raw }}</p>
 			</div>
 				{# Condition pour voir si une image est dispo alors on affiche la div #}
