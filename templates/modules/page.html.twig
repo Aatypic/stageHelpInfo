@@ -28,20 +28,25 @@
 			<hr>
 		</div>
 
-		<!-- Bloc avec le page de la pageModule -->
+		<!-- Bloc avec le contenu de la pageModule -->
 		<div class="d-grid bloc-page">
-			{% if pages is defined %}
-			<div class="bloc-text">
-				<p>{{ pages.text | raw }}</p>
+			{% for page in pages %}
+				<div class="bloc-text">
+				<p>{{ page.text | raw }}</p>
 			</div>
-			<div class="bloc-image">
-				<img src="/images/imagesModules/{{ pages.image }}" alt="placeholder"></img>			
-			</div>
+				{# Condition pour voir si une image est dispo alors on affiche la div #}
+				{% if page.image %}
+				<div class="bloc-image">
+					<img src="{{asset ('images/imagesModules/' ~ page.image )}}" alt="{{ module.titre }}"></img>			
+				</div>
+				{% endif %}
+			
 			<div class="bloc-n-page">
 				<a href="#" class="button-n-page btn btn-primary">Page suivante</a>
 			</div>
 		</div>
-		{% endif %}
+			{% endfor %}
+		
 	</div>
 
 {% endblock %}
