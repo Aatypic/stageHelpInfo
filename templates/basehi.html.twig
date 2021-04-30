@@ -67,7 +67,7 @@
 							</li>
 							<!-- Onglet "Media" desactivé. (supprimer les balises commentaire pour l'activer)-->
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('login') }}">Media</a>
+								<a class="nav-link" href="{{ path('modules') }}">Media</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="">Références</a>
@@ -86,8 +86,18 @@
 			<div class="container-fluid bg-light p-5 " id="banner-bg">
 				<div class="text-center" id="textBanner"></br>
 				{% block banner %}{% endblock banner %}
+				</div>
+				{% if app.user %}
+        <div class="logged-in">
+            <i class="bi bi-person-circle"></i> {{ app.user.username }} <a href="{{ path('app_logout') }}"><i class="bi bi-box-arrow-right"></i>Se deconnecté</a>
+        </div>
+		{% else %}
+			<div class="logged-in ">
+				<a href="{{path ('login')}}">Se connecter</a>
 			</div>
-		</div>
+			
+    {% endif %}
+			</div>
 		<!-- Fin bannière -->
 </html>
 </header>
@@ -97,6 +107,11 @@
         <div class="logged-in mb-3">
             <i class="bi bi-person-circle"></i> {{ app.user.username }} <a href="{{ path('app_logout') }}"><i class="bi bi-box-arrow-right"></i>Se deconnecté</a>
         </div>
+		{% else %}
+			<div class="logged-in mb-3">
+				<a href="{{path ('login')}}">Se connecter</a>
+			</div>
+			
     {% endif %}
 {% block body %}{% endblock %}
 </div>

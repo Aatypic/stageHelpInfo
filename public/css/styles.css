@@ -3,10 +3,9 @@
 -- #234fa1 dark bleu " " -------
 */
 
-
-@font-face  {
-  font-family: 'Dom Casual BT';
-  src: url('../fonts/dom-casual-bt.ttf');
+@font-face {
+  font-family: "Dom Casual BT";
+  src: url("../fonts/dom-casual-bt.ttf");
 }
 
 /*taille et police de la barre de navigation*/
@@ -15,24 +14,23 @@
   position: fixed;
   width: 100vw;
   z-index: 1000;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-size: 2.2em;
-  font-family:  'Dom Casual BT', arial, sans-serif;
+  font-family: "Dom Casual BT", arial, sans-serif;
 }
 .add-shadow {
   box-shadow: 0px 4px 8px 0px #234fa1;
 }
 
-
-#assistance{
+#assistance {
   color: #ff944d;
   font-weight: bold;
 }
 
-#assistance:hover{
+#assistance:hover {
   color: #ff751a;
 }
 
@@ -42,7 +40,7 @@
   margin: 0;
   padding: 0;
 }
-#banner-bg{
+#banner-bg {
   position: relative;
   min-height: 225px;
   background: url("../../images/chroma2.png");
@@ -55,18 +53,17 @@
 }
 
 /*Nom de la page dans la bannière*/
-#textBanner{
+#textBanner {
   text-shadow: 1px 1px 2px black;
   color: white;
 }
 
 /* la page prend la hauteur total de l'écran au minimum et permet au footer d'être coller au bas de la page */
-html{
+html {
   height: 100%;
 }
 /*police de la page et permet de fixer le footer au bas de la page */
-body{
-  
+body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100%;
   display: grid;
@@ -81,8 +78,7 @@ body {
 /* ajouter 23mars pour la page intro et page contenu */
 .intro-banner {
   display: flex;
-  flex-flow: row wrap ;
-  
+  flex-flow: row wrap;
 }
 /* pour utiliser tout l'espace des 100% via flex basis */
 .intro-banner > * {
@@ -101,28 +97,31 @@ body {
   flex: 1;
 }
 
-
 /* Bloc logged-in de l'utilisateur */
 .logged-in {
+  
   justify-content: space-around;
   text-align: right;
   padding-right: 1rem;
 }
 .logged-in a {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 1px black;
   text-decoration: none;
   font-weight: bold;
   color: unset;
   transition: border 0.2s linear;
 }
-.logged-in a:hover, .logged-in a:focus {
-  border-bottom: linear-gradient(to right, #428ab2, #419cb9, 
-  #4dadbc, #64bebc, #80cdbb) 3px solid;
+.logged-in a:hover,
+.logged-in a:focus {
+  border-bottom: ;
 }
 
 .bi {
   font-size: 19px;
 }
-
 
 /* Pourcentage de progression de l'utilisateur */
 .pourcent {
@@ -132,7 +131,7 @@ body {
   font-weight: bold;
 }
 
-#footer{
+#footer {
   margin-top: 20px;
   padding-top: 25px;
   padding-bottom: 15px;
@@ -150,14 +149,14 @@ footer .row {
   padding-left: 15px;
 }
 
-#blocContact{
+#blocContact {
   margin-top: 15px;
   padding-bottom: 15px;
   color: darkgray;
 }
 
 /* Style du logo et durée de transition quand survolé  */
-#facebook{
+#facebook {
   border-radius: 8px;
   width: 30px;
   height: auto;
@@ -171,55 +170,51 @@ footer .row {
   margin-left: 5px;
 }
 
-
 /* centre l'image google dans sa colonne*/
-#blocMap{
+#blocMap {
   text-align: center;
 }
 
 /*style de l'image google*/
-#mapGoogle{
+#mapGoogle {
   border: 1px solid #f8f9fa;
   border-radius: 8px;
   padding: 5px;
   width: 150px;
 }
 
-strong{
+strong {
   font-weight: normal;
-  font-family: 'Dom Casual BT', arial, sans-serif;
+  font-family: "Dom Casual BT", arial, sans-serif;
   font-size: 1.5em;
 }
 
-em{
+em {
   font-style: normal;
   font-weight: bold;
 }
 
 /* désactive le lien vers le telephone pour les d'ordinateur et tablettes */
-#tel{
+#tel {
   pointer-events: none;
   cursor: default;
   color: darkgrey;
 }
 
-
-
 /* ---------------------------------
 ------------MEDIA QUERRIES-----------
 -------------------------------------- */
 @media screen and (max-width: 992px) {
-
-  #assistance{
+  #assistance {
     color: #808080;
     font-weight: unset;
   }
 
-  #assistance:hover{
+  #assistance:hover {
     color: black;
   }
 
-  #tel{
+  #tel {
     color: dodgerblue;
     pointer-events: unset;
     cursor: pointer;
@@ -229,16 +224,16 @@ em{
     margin-top: unset;
   }
 
-  #banner-bg{
+  #banner-bg {
     margin-bottom: 20px;
   }
 
-  #facebook{
+  #facebook {
     border-radius: 8px;
   }
 
   /* désactive l'animation du logo facebook sur mobile*/
-  #facebook{
+  #facebook {
     transition: none;
   }
   #facebook:hover {
@@ -246,31 +241,27 @@ em{
     height: auto;
     transform: none;
     margin-left: none;
-
   }
-
 }
 
 @media screen and (max-width: 768px) {
-
   /*reduction hauteur de bannière pour mobile*/
-  #banner-bg{
+  #banner-bg {
     min-height: 175px;
   }
 
-  #footer{
+  #footer {
     padding-top: unset;
   }
-
 }
-@media screen and (min-width: 1200px){
-.container {
+@media screen and (min-width: 1200px) {
+  .container {
     max-width: 1140px;
-}
+  }
 }
 
-@media screen and (min-width: 576px){
+@media screen and (min-width: 576px) {
   #banner-bg {
-    padding: 4rem 2rem!important;
+    padding: 4rem 2rem !important;
   }
 }

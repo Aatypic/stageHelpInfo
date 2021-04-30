@@ -15,20 +15,20 @@ class PageModuleController extends AbstractController
     /**
      *  @Route("modules/page/{id}", name="page")
      */
-    public function page($id, $page): Response
+    public function page($id): Response
     
     {
         $repoM = $this->getDoctrine()->getRepository(Modules::class);
         $repoP = $this->getDoctrine()->getRepository(PageModule::class);
 
-        $module = $repoM->findBy($id);
+        $module = $repoM->find($id);
         //findOneBy car on veut afficher 1 page
-        $page = $repoP->findOneBy(['page' => $page]);
+        $super = $repoP->findAll();
 
         //dd();
             return $this->render('modules/page.html.twig', [
                 'module' => $module,
-                'pages' => $page
+                'pages' => $super
         ]);
         }
 
