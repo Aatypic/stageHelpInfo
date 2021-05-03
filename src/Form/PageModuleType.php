@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class PageModuleType extends AbstractType
 {
@@ -19,8 +20,9 @@ class PageModuleType extends AbstractType
     {
         $builder
             ->add('sous_titre', TextType::class)
-            ->add('text', TextareaType::class)
-            ->add('image', TextType::class)
+            ->add('text', CKEditorType::class)
+            ->add('image', TextType::class,  [
+                'required' => false])
             ->add('page', NumberType::class)
             ->add('modules', EntityType::class, [
                 'class' => Modules::class

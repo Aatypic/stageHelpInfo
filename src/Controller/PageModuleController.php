@@ -13,22 +13,22 @@ use Symfony\Component\HttpFoundation\Response;
 class PageModuleController extends AbstractController
 {
     /**
-     *  @Route("modules/{titre}", name="page")
+     *  @Route("modules/{titre}", name="page-module")
      */
-    public function page(Modules $module): Response
+    public function page(Modules $modules, PageModuleRepository $pageModuleRepo)
     
     {
         //$repoM = $this->getDoctrine()->getRepository(Modules::class);
-        $repoP = $this->getDoctrine()->getRepository(PageModule::class);
+        //$repoP = $this->getDoctrine()->getRepository(PageModule::class);
 
         //$module = $repoM->find($titre);
         //findOneBy car on veut afficher 1 page
-        $pageModule = $repoP->findAll();
+        //$pageModule = $repoP->findAll();
 
         //dd();
             return $this->render('modules/page.html.twig', [
-                'module' => $module,
-                'pages' => $pageModule
+                'module' => $modules,
+                'pageModule' => $pageModuleRepo->findAll()
         ]);
         }
 

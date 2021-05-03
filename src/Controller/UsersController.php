@@ -36,10 +36,13 @@ class UsersController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // là il faut au'on récupère le nom d'utilisateur connecté (et le active ?)
             //$pageModule->setUsers($this->getUser());
+            //$pageModule->setActive(false);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($pageModule);
             $em->flush();
+
+            return $this->redirectToRoute('admin_home');
         }
 
         return $this->render('users/pages-modules/ajout.html.twig', [

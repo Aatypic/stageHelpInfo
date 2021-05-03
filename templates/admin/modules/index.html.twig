@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les modules{% endblock %}
+
+{% block banner %}
+    <h1>Interface Administrateur</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Gérer les modules</h1>
+    <a href="{{ path ('admin_modules_ajout')}}" class="btn btn-primary">Ajouter un module</a>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Nombre de pages</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for module in modules %}
+    <tr>
+      <th scope="row">{{module.id}}</th>
+      <td>{{module.titre}}</td>
+      <td>{{module.nbPages}}</td>
+      <td class="text-center">
+        {# ce qu'il faut c'est lui passer en plus, sous forme Json un id qui est module.id #}
+        <a href="{{ path ('admin_modules_modifier', {id: module.id})}}" class="btn btn-primary">Modifier</a>
+
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
