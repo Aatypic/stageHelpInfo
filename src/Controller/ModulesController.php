@@ -24,4 +24,23 @@ class ModulesController extends AbstractController
         ]);
     }
 
+
+
+    ///**
+    // *  @Route("/contenu/{id}", name="contenu")
+    // */
+   // public function contenu($id): Response
+    ////public function contenu(Modules $module, PageModule $pageModule)
+   // {
+      //  $repo1 = $this->getDoctrine()->getRepository(Modules::class);
+     //  $repo = $this->getDoctrine()->getRepository(PageModule::class);
+
+     //   $module = $repo1->find($id);
+     //   $pageModule = $repo->find($id);
+
+     //   return $this->render('modules/contenu.html.twig', [
+     //       'module' => $module,
+      //      'contenu' => $pageModule
+      //  ]);
+    //}
 }
