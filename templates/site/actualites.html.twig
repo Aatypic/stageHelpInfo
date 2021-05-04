@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset ('css/actualites.css')}}">
+{% endblock %}
+
+{% block banner %}
+  <h1>Actualités</h1>
+{% endblock %}
+
+{% block body %}
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg">
+          <h5 id="rubrique">ANAP Appui santé & médico-social<br><br></h5>
+        {% for p in postsAnap %}
+          <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" > {{ p.title }} </h5>
+                <hr>
+                <p class="card-text"> {{ p.description|raw }} </p>
+                <hr>
+                <div class="boutons">
+                  <a href="{{ p.link }} " class="btn btn-primary">Lire la suite</a>
+                </div>
+            </div>
+          </div>
+
+        {% endfor %}
+      </div>
+
+      <div class="col-lg">
+          <h5 id="rubrique">Ministère des Solidarités et de la Santé</h5>
+        {% for p in postsSs1 %}
+          <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" > {{ p.title }} </h5>
+                <hr>
+                <p class="card-text"> {{ p.description|raw }}</p>
+                <hr>
+                <div class="boutons">
+                  <a href="{{ p.link }} " class="btn btn-primary">Lire la suite</a>
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-lg">
+          <h5 id="rubrique">Ministère des Solidarités et de la Santé</h5>
+        {% for p in postsSs2 %}
+          <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" > {{ p.title }} </h5>
+                <hr>
+                <p class="card-text"> {{ p.description|raw }}</p>
+                <hr>
+                <div class="boutons">
+                  <a href="{{ p.link }} " class="btn btn-primary">Lire la suite</a>
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

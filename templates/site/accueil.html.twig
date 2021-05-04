@@ -4,7 +4,7 @@
 {% block title %} Bienvenue sur HelpInfo {% endblock %}
 
 {% block  stylesheets %}
-  <link rel="stylesheet" href="assets/css/accueil.css">
+  <link rel="stylesheet" href="{{ asset ('css/accueil.css')}}">
 {% endblock %}
 
 {% block banner %}
@@ -18,7 +18,8 @@
     <div class="row">
 
       <div class="col-lg" id="stan">
-          <img src="/assets/images/stan.jpg" title="Image par Yves Bernardi" alt="image de la place Stanislas, Nancy"></a>
+          {# updated asset #}
+          <img src="{{asset ('/images/stan.jpg')}}" title="Image par Yves Bernardi" alt="image de la place Stanislas, Nancy"></a>
       </div>
 
       <div class="col-lg">
@@ -32,16 +33,22 @@
         <ul>
 
           <li>
-            L’Installation et la <em><a href="{{ path("prestation") }}">maintenance informatique</a></em>, le suivi du parc, la gestion de l’infrastructure réseau et la relation
+            L’Installation et la <em><a href="{{ path ('prestations')}}">maintenance informatique</a></em>, le suivi du parc, la gestion de l’infrastructure réseau et la relation
             avec vos éditeurs de logiciels.
           </li>
 
           <li>
-            L’Edition d’un <em><a href="{{ path("solution") }}">logiciel de gestion du temps de travail</a></em>, temps de présence, temps d’absence, Get-MS.
+            L’Edition d’un <em><a href="{{ path ('solutions')}}">logiciel de gestion du temps de travail</a></em>, temps de présence, temps d’absence, Get-MS.
           </li>
 
         </ul>
-
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title alert alert-warning">Nouveauté !</h5>
+            <p class="card-text"><strong>Help Info</strong> vient d'intégrer des modules sur le site et vous propose de vous former de façon autonome sur Get-MS.</p>
+            <a href="{{ path ('modules') }}" class="btn btn-primary">Accèder aux modules</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

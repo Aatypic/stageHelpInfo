@@ -20,35 +20,8 @@ class ModulesController extends AbstractController
         $modules = $repo->findAll();
 
         return $this->render('modules/modules.html.twig', [
-            'controller_name' => 'ModulesController',
             'modules' => $modules
         ]);
     }
 
-
-
-    /**
-     * @Route("/", name="login")
-     */
-    public function login(): Response
-    {
-        return $this->render('modules/login.html.twig');
-    }
-
-    /**
-     *  @Route("/intro", name="intro")
-     */
-    public function module(): Response
-    {
-        return $this->render('modules/intro.html.twig');
-    }
-
-
-    /**
-     * @Route("/quizz", name="quizz")
-     */
-    public function quizz(): Response
-    {
-        return $this->render('modules/quizz.html.twig');
-    }
 }

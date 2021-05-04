@@ -6,35 +6,48 @@ b{
   font-style: normal;
 }
 
-.content *{
-  text-align: justify;
+#rubrique{
+  text-align: center;
+  color: #007bff;
+  background-color: white;
+
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 20px;
+
+  padding: 15px;
+  margin-bottom: 25px;
 }
 
-.content a{
-  text-align: end;
+.card{
+  margin-bottom: 20px;
 }
 
-#actuBorder{
-  border-radius: 25px 25px 25px 25px;
-  background-color: #f8f9fa;
 
-  padding-top: 20px;
-
-  margin-left: 10px;
-  margin-right: 10px;
+.boutons{
+  text-align: center;
 }
 
 @media screen and (max-width: 992px) {
 
-  #actuBorder{
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+  .card{
+    margin-bottom: 15px;
+  }
+
+  .card-title{
+    text-align: unset;
+  }
+
+  .card-body p{
+    text-align: justify;
   }
 
   .jumbotron{
     margin-bottom: 20px;
   }
 
+  #rubrique{
+    text-align: center;
+    margin-top: 15px;
+  }
+
 }
-
-

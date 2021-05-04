@@ -1,0 +1,460 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="assets/css/solution.css">
+{% endblock %}
+
+{% block banner %}
+  <h1>Solutions GET-MS</h1>
+{% endblock %}
+
+{% block body %}
+
+  <div class="container">
+
+    <!-- 1 -->
+
+    <div class="accordion" id="accordionExample">
+
+      <div class="card">
+        <div class="card-header" id="headingUn">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseUn"
+              aria-expanded="true" aria-controls="collapseUn">
+              1 - Application de gestion des plannings : GET-MS
+            </button>
+          </h2>
+
+        </div>
+
+        <div id="collapseUn" class="collapse" aria-labelledby="headingUn" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <p>
+              Bien gérer son capital humain passe par un suivi adéquat de ses activités, de ses temps de travail et de
+              ses absences. La complexité de cette tâche varie en fonction de l’organisation mais aussi selon la
+              législation en vigueur.
+            </p>
+
+            <p>
+              Les différentes contraintes légales (le respect du maximum d’heures de travail hebdomadaires, le suivi
+              des heures supplémentaires, les congés, les repos compensateurs,..), l’importance d’une bonne gestion des
+              relations avec les salariés (transparence, communication), conduisent à considérer la gestion des temps
+              au‐delà du bulletin de salaire.
+            </p>
+
+            <p>
+              Véritable outil d'aide à la planification des temps de présence, d'absence, de congé et d'activité des
+              salariés, le logiciel de Gestion des plannings Get-MS vous permet d’optimiser l'allocation des ressources
+              humaines.
+            </p>
+
+            <p>
+              L’application de gestion et de décompte du temps de travail GET-MS a été créée par des professionnels du
+              médico-social et des professionnels de l’informatique.
+            </p>
+
+            <p>
+              Les premières versions de GET-MS ont été installées dès 1995, par ces mêmes professionnels, dans un souci
+              d’apporter aux responsables d’organisations d’établissements un outil de proximité, facile à mettre en
+              œuvre, et abordable financièrement.
+            </p>
+
+            <p>
+              Depuis plusieurs années, la société Helpinfo assure la maintenance de l’application GET-MS et a développé
+              la dernière version de cette application.
+            </p>
+
+            <p>
+              Aujourd’hui, plusieurs centaines d’établissements utilisent l’application GET-MS au quotidien.
+            </p>
+
+            <br/>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              2 - Caractéristiques techniques de l'application
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <p>
+              Développée en C# sous Visual studio de Microsoft pour une base de données "SQLserver", l’application de
+              gestion des plannings Get-MS peut être utilisée en mono poste, en client/serveur (réseau) ou en accès à
+              distance sur un serveur RDS.
+            </p>
+
+            <p>
+              L’application répond aux contraintes du droit social et des conventions collectives (loi Aubry de 2008,
+              Code du travail).
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              3 - Agent et contrat
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/agent.png" target="_blank">
+              <img src="../../assets/images/solution/agent.png" alt="Photo de la fenêtre Agent et Contrat" width="90%"
+                height="100%" />
+            </a>
+
+            <p>
+              La fiche agent contient les renseignements classiques d’un agent mais aussi ces périodes contractuelles,
+              ces paramètres de configuration personnels et des récapitulatifs de ces activités.
+            </p>
+
+            <p>
+              Un agent peut travailler dans plusieurs établissements sur des périodes contractuelles qui peuvent se
+              succéder ou s’additionner (2 périodes à 50% constituant un temps plein à 100%)
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingQuatre">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseQuatre"
+              aria-expanded="false" aria-controls="collapseQuatre">
+              4 - Horaire de base, roulement
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseQuatre" class="collapse" aria-labelledby="headingQuatre" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/horaires.png" target="_blank">
+              <img src="../../assets/images/solution/horaires.png" alt="Photo de la fenêtre horaires" width="90%"
+                height="100%" />
+            </a>
+
+            <p>
+              Après avoir défini les agents et leurs contrats, il est possible de construire des horaires de base, des
+              emplois du temps,
+              des roulements, des trames sur une ou plusieurs semaines qui seront à planifier,
+              à attribuer à des agents sur une période pour construire leur planning prévisionnel.
+            </p>
+
+            <p>
+              Lors de la saisie, des assistants informent l’utilisateur de la non-conformité de certaines situations,
+              durées du travail au delà de 11h00, pause au-delà de 6h00, amplitude de la journée trop importante,…
+              Toutes ces valeurs sont modifiables pour s’adapter à votre organisation.
+            </p>
+
+            <p>
+              Il est possible de détailler les prises en précisant le détail des activités réalisées pour chaque prise.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 5 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingCinq">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseCinq"
+              aria-expanded="false" aria-controls="collapseCinq">
+              5 - Journée planning
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseCinq" class="collapse" aria-labelledby="headingCinq" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/journeePlanning.png" target="_blank">
+              <img src="../../assets/images/solution/journeePlanning.png" alt="Photo de la fenêtre Journée et Planning"
+                width="90%" height="100%" />
+            </a>
+
+            <p>
+              La journée planning s’organise en trois prises et deux pauses qui doivent être qualifiées (code événement)
+              pour alimenter les différents compteurs des temps de travail et d’absence de manière journalière,
+              hebdomadaire, mensuelle et annuelle.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 6 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingSix">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix"
+              aria-expanded="false" aria-controls="collapseSix">
+              6 - Planning individuel
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/planningIndividuel.png" target="_blank">
+              <img src="../../assets/images/solution/planningIndividuel.png" alt="Photo de la fenêtre Planning individuel"
+                width="90%" height="100%" />
+            </a>
+
+            <p>
+              Les plannings prévisionnels deviendront au fur et à mesure des événements des plannings réalisés.
+              Le planning individuel permet de gérer en autres les situations suivantes :
+            </p>
+
+            <ul>
+              <li>Congés payés annuels et d’ancienneté</li>
+              <li>Congés trimestriels</li>
+              <li>RTT</li>
+              <li>Journée nationale de solidarité</li>
+              <li>Astreintes</li>
+              <li>Jours fériés</li>
+              <li>Travail de nuit et repos compensateur</li>
+              <li>Maladie, Maternité, Paternité</li>
+              <li>Mi temps thérapeutique</li>
+              <li>Temps de formation</li>
+              <li>Délégation</li>
+              <li>Indemnités de dimanches et jours fériés</li>
+              <li>Repas</li>
+              <li>Heures supplémentaires et repos compensateur</li>
+            </ul>
+
+            <p>
+              Tous les compteurs utiles au quotidien sont visibles sur le formulaire individuel, et s’ajustent en temps
+              réel.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 7 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingSept">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSept"
+              aria-expanded="false" aria-controls="collapseSept">
+              7 - Planning journalier
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseSept" class="collapse" aria-labelledby="headingSept" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/planningJournalier.png" target="_blank">
+              <img src="../../assets/images/solution/planningJournalier.png" alt="Photo de la fenêtre Planning journalier"
+                width="90%" height="100%" />
+            </a>
+
+            <p>
+              A l’ouverture de l’application, le planning journalier permet de vérifier la couverture des besoins pour la
+              journée.
+              En un coup d’œil le planning des agents est facilement matérialisé, avec présents, absents et motifs des
+              absences.
+            </p>
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 8 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingHuit">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseHuit"
+              aria-expanded="false" aria-controls="collapseHuit">
+              8 - Planning collectif
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseHuit" class="collapse" aria-labelledby="headingHuit" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/planningCollectif.png" target="_blank">
+              <img src="../../assets/images/solution/planningCollectif.png" alt="Photo de la fenêtre Planning collectif"
+                width="90%" height="100%" />
+            </a>
+
+            <p>
+              Les vues collectives (a la semaine, au mois, de dates à dates)
+              permettent de visualiser rapidement la couverture des besoins sur une période
+              et de réaliser les modifications d’horaires en relation avec les autres agents du service,
+              de l’unité, de la section, …
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 9 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingNeuf">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNeuf"
+              aria-expanded="false" aria-controls="collapseNeuf">
+              9 - Plan de service
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseNeuf" class="collapse" aria-labelledby="headingNeuf" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/planService.png" target="_blank">
+              <img src="../../assets/images/solution/planService.png" alt="Photo de la fenêtre Plan de service"
+                width="90%" height="100%" />
+            </a>
+
+            <p>
+              De nombreux outils sont disponibles, ils facilitent le traitement des évènements.
+              Le générateur de plan de service permet lui de modéliser des roulements
+              à partir des besoins et en fonction des ressources disponibles.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 10 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingDix">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseDix"
+              aria-expanded="false" aria-controls="collapseDix">
+              10 - Exporter
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseDix" class="collapse" aria-labelledby="headingDix" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <a href="../../assets/images/solution/transfertPaie .png" target="_blank">
+              <img src="../../assets/images/solution/transfertPaie .png" alt="Photo de la fenêtre Transfer de paie"
+                width="90%" height="100%" />
+            </a>
+
+            <p>
+              Toutes les données de l’application peuvent être exportées vers des logiciels tiers (Paie, RH, …).
+              Le principe est simple, chaque données peut être extraites au choix en heures,
+              en jours ou en date sur une période.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 11 -->
+
+      <div class="card">
+
+        <div class="card-header" id="headingOnze">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOnze"
+              aria-expanded="false" aria-controls="collapseOnze">
+              11 - Editions
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOnze" class="collapse" aria-labelledby="headingOnze" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <p>
+              De nombreuses editions sont disponibles, en voici quelques unes:
+            </p>
+
+            <h4>
+              Etat individuel mensuel
+            </h4>
+
+            <a href="../../assets/images/solution/editionIndividuelMensuelle.png" target="_blank">
+              <img src="../../assets/images/solution/editionIndividuelMensuelle.png"
+                alt="Photo de la fenêtre d'Edition individuel mensuelle" width="90%" height="100%" />
+            </a>
+
+            <p>
+              L'état du temps de travail effectif mensuel avec cumul hebdomadaire.
+              Tous les jours d’absence, maladie, congés formation,
+              ainsi que les primes de dimanches et jours fériés sont regroupés en pied d’état.
+              Cet état peut être utilisé pour la validation des horaires par le salarié et le gestionnaire.
+              Editable par service, par section, par agent, avec cumul mensuel et annuel du temps de travail effectif.
+              Il renseigne également sur les écarts annuels.
+            </p>
+
+            <h4>
+              Etat collectif de date à date
+            </h4>
+
+            <a href="../../assets/images/solution/editionCollectiveHebdomadaire.png" target="_blank">
+              <img src="../../assets/images/solution/editionCollectiveHebdomadaire.png"
+                alt="Photo de la fenêtre d'Edition collective hebdomadaire" width="90%" height="100%" />
+            </a>
+
+            <p>
+              L'état Présence hebdomadaire est éditable par service, par section pour affichage
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class SiteController extends AbstractController
 {
     /**
-     * @Route("/", name="accueil")
+     * @Route("/", name="app_home")
      */
     public function index()
     {
@@ -93,11 +94,11 @@ class SiteController extends AbstractController
     }
 
     /**
-     * @Route("/solution", name="solution")
+     * @Route("/solutions", name="solutions")
      */
-    public function solution()
+    public function solutions()
     {
-        return $this->render('site/solution.html.twig');
+        return $this->render('site/solutions.html.twig');
     }
 
     /**
@@ -109,11 +110,11 @@ class SiteController extends AbstractController
     }
 
     /**
-     * @Route("/prestation", name="prestation")
+     * @Route("/prestations", name="prestations")
      */
-    public function prestation()
+    public function prestations()
     {
-        return $this->render('site/prestation.html.twig');
+        return $this->render('site/prestations.html.twig');
     }
 
     /**
@@ -129,6 +130,23 @@ class SiteController extends AbstractController
     public function media()
     {
         return $this->render('site/media.html.twig');
+    }
+
+    /**
+     *  @Route("/intro", name="intro")
+     */
+    public function module(): Response
+    {
+        return $this->render('modules/intro.html.twig');
+    }
+
+
+    /**
+     * @Route("/quizz", name="quizz")
+     */
+    public function quizz(): Response
+    {
+        return $this->render('modules/quizz.html.twig');
     }
 
 }

@@ -69,6 +69,17 @@ h2 {
 ------------MEDIA QUERRIES-----------
 -------------------------------------- */
 @media screen and (min-width: 768px) {
+
+  .content .container {
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,.125);
+  
+    background-color: white;
+  
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   .module-card {
     height: 120px;
   }

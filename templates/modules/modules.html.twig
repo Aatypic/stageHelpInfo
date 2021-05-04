@@ -19,13 +19,12 @@
 	<div class="container px-4">
 		<div class="d-grid gap-3 bloc-modules">
 			{% for module in modules %}
-				<a href="{{ path ('page-module', {'titre': module.titre}) }}">
+				<a href="{{ path ('page-module_page', {'slug': module.slug}) }}">
 					<div class="p-2 bg-light border module-card">
 						<h3 class="type-module">Modules Get-MS</h3>
 						<h2 class="title-module">{{ module.titre }}</h2>
 						<span class="pourcent">ici % !</span>
-						<span class="pages-module">{{ module.nbPages }}
-							pages</span>
+						<span class="pages-module">{{ module.nbPages }} pages</span>
 					</div>
 				</a>
 			{% endfor %}

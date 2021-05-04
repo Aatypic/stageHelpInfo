@@ -3,8 +3,11 @@ em{
 }
 
 .content .container{
-  border-radius: 25px 25px 25px 25px;
-  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.125);
+
+  background-color: white;
+
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -18,20 +21,10 @@ em{
   text-align: justify;
 }
 
-
-/* Css pour I.E 10 & 11 */
+/* Css pour I.E 10 & 11 permet de coller le footer au bas de la page */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   #footer{
     margin-top: 80px;
   }
 }
 
-@media screen and (max-width: 576px){
-
-  .content img{
-    width: 325px;
-    height: 100%;
-    border-radius: 50px;
-  }
-
-}

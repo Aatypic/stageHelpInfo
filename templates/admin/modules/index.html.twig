@@ -1,9 +1,18 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
+
+{# Gestionnaire des Modules #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Gérer les modules{% endblock %}
 
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset ('css/admin.css')}}">
+{% endblock %}
+
 {% block banner %}
-    <h1>Interface Administrateur</h1>
+  <h1>Interface Administrateur</h1>
 {% endblock %}
 
 {% block body %}
@@ -16,7 +25,7 @@
       <th scope="col">ID</th>
       <th scope="col">Titre</th>
       <th scope="col">Nombre de pages</th>
-      <th scope="col">Actions</th>
+      <th scope="col" class="">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -25,9 +34,9 @@
       <th scope="row">{{module.id}}</th>
       <td>{{module.titre}}</td>
       <td>{{module.nbPages}}</td>
-      <td class="text-center">
+      <td class="">
         {# ce qu'il faut c'est lui passer en plus, sous forme Json un id qui est module.id #}
-        <a href="{{ path ('admin_modules_modifier', {id: module.id})}}" class="btn btn-primary">Modifier</a>
+        <a href="{{ path ('admin_modules_modifier', {id: module.id})}}" class="btn btn-outline-success"><i class="bi bi-pencil"></i> Modifier</a>
 
       </td>
     </tr>

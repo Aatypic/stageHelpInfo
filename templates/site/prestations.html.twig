@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet"  href="/assets/css/prestation.css"/>
+{% endblock %}
+
+{% block banner %}
+ <h1>Prestations</h1>
+{% endblock %}
+
+{% block body %}
+
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <h3>Maintenance et Assistance</h3>
+
+      <div class="col-lg-10">
+        <p>
+          La plupart des petites structures ne peuvent disposer d'un administrateur capable de maintenir les serveurs,
+          d'effectuer les mises à jour des systèmes et des applications,
+          de modifier les droits d'accès ou tout simplement assister les opérateurs dans l'utilisation quotidienne de l'outil informatique.
+          Pour cela, nous avons mis en place une télémaintenance comprenant :
+        </p>
+      </div>
+
+      <div class="col-lg-8">
+        <ul>
+
+          <li>
+            Une <em>maintenance préventive mensuelle</em> de votre serveur,
+            en particulier pour vérifier les sauvegardes,
+            l’antivirus, les disques, …
+          </li>
+
+          <li>
+            Une <em>maintenance curative</em> en cas d’incident logiciel et matériel. La maintenance curative intervient à votre demande,
+            immédiatement à partir de votre appel téléphonique ou sur rendez-vous selon votre besoin.
+          </li>
+
+          <li>
+            <em>L’assistance avec prise en mains à distance</em> aux ordinateurs de bureau est un complément de la maintenance serveur.
+            Elle permet aux utilisateurs de solliciter par téléphone la maintenance pour résoudre les dysfonctionnements du poste.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+

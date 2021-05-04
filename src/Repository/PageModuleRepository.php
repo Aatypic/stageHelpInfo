@@ -19,6 +19,31 @@ class PageModuleRepository extends ServiceEntityRepository
         parent::__construct($registry, PageModule::class);
     }
 
+
+
+    /**
+     * Returns all PageModule per page
+     * @return void
+     */
+    public function getPaginatedPageModule($page, $limit){
+        $query = $this->createQueryBuilder('a')
+        ->setFirstResult(($page * $limit) -$limit)
+        ->setMaxResults($limit)
+        ;
+        return $query->getQuery()->getResult();
+    }
+    
+    /**
+     * Returns numbers of Pages d'un Module
+     * @return void
+     */
+    public function getTotalPageModule(){
+        $query = $this->createQueryBuilder('a')
+            ->select('COUNT(a)')
+            ;
+        return $query->getQuery()->getSingleScalarResult();
+
+    }
     // /**
     //  * @return PageModule[] Returns an array of PageModule objects
     //  */

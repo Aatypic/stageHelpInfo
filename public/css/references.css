@@ -1,6 +1,7 @@
 #clients{
-  border-radius: 50px;
-  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.125);
+  background-color: white;
   padding-top: 20px;
 }
 
@@ -8,6 +9,13 @@
   height: auto;
   width: 200px;
   border-radius: 8px;
+}
+
+#partenaires{
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,.125);
 }
 
 #partenaires h4{

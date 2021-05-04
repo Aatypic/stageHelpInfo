@@ -1,6 +1,15 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
+
+{# Interface Administrateur 'admin_home' #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Interface Administrateur{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset ('css/admin.css')}}">
+{% endblock %}
 
 {% block banner %}
     <h1>Interface Administrateur</h1>
@@ -12,16 +21,16 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Ajouter un nouveau MODULE</h5>
+        <h5 class="card-title">Gérer les MODULES</h5>
         <p class="card-text">Ce lien vous envoie sur le formulaire de création d'un module, il sera ensuite ajouté automatiquement à la base de données.</p>
-        <a href="{{ path ('admin_modules')}}" class="btn btn-primary">Ajouter un module</a>
+        <a href="{{ path ('admin_modules')}}" class="btn btn-primary">Gérer les modules</a>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Gérer la/les PAGE(E) d'un module existant</h5>
+        <h5 class="card-title">Gérer la/les PAGE(S) d'un module existant</h5>
         <p class="card-text">Ce lien vous envoie sur le formulaire de création d'une page d'un module déjà existant, elle sera ensuite ajouté automatiquement à la base de données.</p>
         <a href="{{ path ('admin_page-module')}}" class="btn btn-primary">Gestion des pages module</a>
       </div>

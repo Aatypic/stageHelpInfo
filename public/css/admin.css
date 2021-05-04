@@ -1,0 +1,13 @@
+.container{
+    min-height: fit-content;
+}
+
+.card {
+    height: 23vh;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
