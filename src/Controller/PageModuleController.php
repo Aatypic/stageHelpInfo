@@ -38,11 +38,11 @@ class PageModuleController extends AbstractController
         }
 
 
-    public function page(Modules $modules, PageModuleRepository $pageModuleRepo)
+    public function page(ModulesRepository $modulesRepo, PageModuleRepository $pageModuleRepo)
     
     {
         return $this->render('modules/page.html.twig', [
-            'module' => $modules,
+            'module' => $modulesRepo->findAll(),
             'pageModule' => $pageModuleRepo->findAll()
         ]);
     }
