@@ -1,7 +1,6 @@
-{# 
-Ici page des modules > une fois connecté 
-#}
-{% extends "basehi.html.twig" %}
+{# Ici page des modules > une fois connecté #}
+
+{% extends "base.html.twig" %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="css/modules.css">
@@ -12,16 +11,20 @@ Ici page des modules > une fois connecté
 {% endblock %}
 
 {% block body %}
+	{# Make sure you're rendering success flash messages, affichage du message de succès de co. #}
+	{% for message in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+
 	<div class="container px-4">
 		<div class="d-grid gap-3 bloc-modules">
 			{% for module in modules %}
-				<a href="{{ path ('contenu', {'id': module.id}) }}">
+				<a href="{{ path ('page-module_page', {'slug': module.slug}) }}">
 					<div class="p-2 bg-light border module-card">
 						<h3 class="type-module">Modules Get-MS</h3>
 						<h2 class="title-module">{{ module.titre }}</h2>
 						<span class="pourcent">ici % !</span>
-						<span class="pages-module">{{ module.nbPages }}
-							pages</span>
+						<span class="pages-module">{{ module.nbPages }} pages</span>
 					</div>
 				</a>
 			{% endfor %}

@@ -1,0 +1,23 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
+
+{# Page d'ajout d'un Module #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Module{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset ('css/ajout.css') }}">
+{% endblock %}
+
+{% block banner %}
+    <h1>Interface Administrateur</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Ajouter un module</h1>
+    {{form(form)}}
+    </div>
+{% endblock %}

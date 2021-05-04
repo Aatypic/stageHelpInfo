@@ -18,18 +18,25 @@ h5{
 }
 
 .content .container{
-  border-radius: 50px 50px 50px 50px;
-  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.125);
+  background-color: white;
 }
 
+/* ligne de séparation visible uniquement sur mobile
+ pour eviter la confusion entre teamviwer et anydesk pour l'utilisateur*/
 #hrHoriz{
   visibility: hidden;
+}
+
+.content #tel{
+  color: black;
 }
 
 
 @media screen and (max-width: 992px) {
 
-  /* désactive les liens de telechargements pour mobiles */
+  /* désactive les liens de telechargements des logiciels pour mobiles */
   #teamviewer, #anydesk{
     pointer-events: none;
     cursor: not-allowed;

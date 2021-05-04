@@ -1,0 +1,72 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
+
+{# Ici page de login aux modules #}
+
+{% extends "base.html.twig" %}
+
+	{% block stylesheets %}
+<link rel="stylesheet" href="css/login.css"> {% endblock %}
+
+{% block banner %}
+	<h1>Media</h1>
+{% endblock %}
+{# Pour les pages et le chemin en bannière revoir breadcrum de bootstrap #}
+{% block body %}
+
+	<div class="container">
+	<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            Vous êtes déjà connecté via {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
+    {% endif %}
+		{# bootstrap grid #}
+		<div class="row bloc-login">
+			<div class="col-lg">
+				{# Le formulaire de connexion #}
+				{# <form action="{{ path ('modules')}}" class="login"> #}
+					<div class="intro-login">
+						<p>Pour accéder aux Modules, veuillez vous indentifier.</p>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="email" value="{{ last_username }}" name="email" class="form-control" id="floatingEmail" placeholder="nometprénom@exemple.com" required autofocus>
+                        <label for="floatingEmail">Adresse email</label>
+					</div>
+					<div class="form-floating mb-3">
+						
+						<input type="password" name="password"class="form-control" id="floatingPassword" placeholder="mot de passe" required>
+                        <label for="floatingPassword">Mot de passe</label>
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					</div>
+					{#
+        				Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        				See https://symfony.com/doc/current/security/remember_me.html
+    
+        				<div class="checkbox mb-3">
+            			<label>
+               				<input type="checkbox" name="_remember_me"> Se souvenir de moi
+            			</label>
+        				</div>
+    				#}
+					<div class="d-grid">
+					<button type="submit" class="btn btn-primary">Se connecter <i class="bi bi-caret-right-fill"></i></button>
+					</div>
+					<div class="help-login">
+						<p>Vous avez oublié votre mot de passe <a href="{{ path ('app_forgot_password_request')}}"><i class="bi bi-question-circle-fill" aria-label="Question" > </i> Faire une demande de récupération de mot de passe</a></p>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg" id="stan">
+				{# L'image à droite du formulaire de connexion #}
+				<img src="{{ asset('/images/stan.jpg')}}" title="Image par Yves Bernardi" alt="image de la place Stanislas, Nancy">
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}

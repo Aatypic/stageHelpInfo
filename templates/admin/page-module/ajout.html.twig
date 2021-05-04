@@ -1,0 +1,28 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
+
+{# Page d'ajout d'une Page-module #}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset ('css/ajout.css')}}">
+{% endblock %}
+
+{% block title %}Ajouter une page à un Module{% endblock %}
+
+{% block banner %}
+    <h1>Interface Administrateur</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Ajouter une page à un Module</h1>
+    
+    {{form_start(form)}}
+
+
+
+    {{form_end(form)}}
+    </div>
+{% endblock %}

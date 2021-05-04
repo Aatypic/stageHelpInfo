@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\PageModuleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+
 
 /**
  * @ORM\Entity(repositoryClass=PageModuleRepository::class)
@@ -16,6 +18,17 @@ class PageModule
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $sous_titre;
+
+    /**
+     * @Gedmo\Slug(fields={"sous_titre"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     /**
      * @ORM\Column(type="text")
@@ -33,10 +46,40 @@ class PageModule
      */
     private $modules;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $page;
+
+
     public function getId(): ?int
     {
         return $this->id;
     }
+
+    public function getSousTitre(): ?string
+    {
+        return $this->sous_titre;
+    }
+
+    public function setSousTitre(string $sous_titre): self
+    {
+        $this->sous_titre = $sous_titre;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    // public function setSlug(string $slug): self
+    // {
+    //     $this->slug = $slug;
+
+    //     return $this;
+    // }
 
     public function getText(): ?string
     {
@@ -73,4 +116,17 @@ class PageModule
 
         return $this;
     }
+
+    public function getPage(): ?int
+    {
+        return $this->page;
+    }
+
+    public function setPage(int $page): self
+    {
+        $this->page = $page;
+
+        return $this;
+    }
+
 }

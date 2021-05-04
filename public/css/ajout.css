@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    padding: 1em;
+    display: inline-block;
+    width: 120px;
+}

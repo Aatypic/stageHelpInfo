@@ -1,0 +1,87 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
+
+{# Gestionnaire des Pages de modules #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer la page d'un module{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset ('css/admin.css')}}">
+{% endblock %}
+
+{% block banner %}
+    <h1>Interface Administrateur</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Gérer la page d'un module</h1>
+    <a href="{{ path ('admin_page-module_ajout')}}" class="btn btn-primary">Ajouter une page à un module</a>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Sous-titre</th>
+      <th scope="col">Page numéro </th>
+      {# <th scope="col">Titre du module</th> #}
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for page in pageModule %}
+    <tr>
+      <th scope="row">{{page.id}}</th>
+      <td>{{page.sousTitre}}</td>
+      <td>{{page.page}}</td>
+      {# <td>{{module.titre}}</td> #}
+      <td class="">
+        {# ce qu'il faut c'est lui passer en plus, sous forme Json un id qui est page.id #}
+        <a href="{{ path ('admin_page-module_modifier', {id: page.id})}}" class="btn btn-outline-success"><i class="bi bi-pencil"></i> Modifier</a>
+        <!-- Button trigger modal -->
+        <a href="" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{page.id}}" data-titre="{{page.sousTitre}}"><i class="bi bi-trash"></i> Supprimer</a>
+      </td>
+    </tr>
+
+    
+
+<!-- Modal -->
+<div class="modal fade modal-trigger" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Supprimer une page</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-large" data-bs-dismiss="modal">Annuler</button>
+        <a href="" class="btn btn-danger">Valider</a>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+  <script>
+    window.onload = () => {
+      let modal = new bootstrap.Modal('#modal-delete');
+
+      let supprimer = document.querySelectorAll('.modal-trigger');
+      for(let bouton of supprimer){
+        bouton.addEventListener("click", function (){
+          document.querySelector(".modal-footer a").href= `/admin/page-module/supprimer/${this.dataset.id}`
+          document.querySelector(".modal-body").innerText = `Etes-vous sur(e) de vouloir supprimer la page "${this.dataset.titre}" ? `
+        });
+      } 
+    }
+  </script>
+{% endblock %}

@@ -1,6 +1,9 @@
 .content .container {
-  border-radius: 50px 50px 50px 50px;
-  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.125);
+
+  background-color: white;
+
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -8,15 +11,11 @@
 .content img{
   height: auto;
   width: 90%;
-  border-radius: 35px 25px 25px 35px;
+  border-radius: 8px;
   margin-left: 10px;
 }
 
-.content p, li{
-  text-align: justify;
-}
-
-/* Css pour I.E 10 & 11 */
+/* Css pour I.E 10 & 11 permet de coller le footer au bas de la page */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   #footer{
     margin-top: 153px;
@@ -25,13 +24,20 @@
 
 /* responsive css */
 @media screen and (max-width: 992px){
+
   #stan {
     text-align: center;
     margin-bottom: 20px;
   }
 
+  /*supprime la marge dans les onglets pour permettre aux images
+   de prendre la largueur du bloc sur mobile*/
   .content img{
     margin-left: unset;
   }
 
+}
+
+.card {
+  border: none;
 }
