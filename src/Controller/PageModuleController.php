@@ -51,7 +51,7 @@ class PageModuleController extends AbstractController
         return $this->render('modules/page.html.twig', [
             'module' => $modules,
             //'pageModule' => $pageModuleRepo->findAll()
-        ]);
+
     }
 
 
