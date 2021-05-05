@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-  <link rel="stylesheet" style="text/css" href="/assets/css/references.css"/>
+  <link rel="stylesheet" style="text/css" href="{{ asset ('css/references.css') }}"/>
 {% endblock %}
 
 {% block banner %}
@@ -19,74 +19,53 @@
     </div>
 
     <!-- bloc client -->
+    <!-- Rangée 1 -->
     <div class="row">
-
       <div class="col">
-
         <p>ADAPEI 88</p>
-
         <a href="http://adapei88.fr/">
-          <img src="../../assets/images/clients/adapei88.jpg" alt="Association adapai88">
+          <img src="{{ asset ('/images/clients/adapei88.jpg')}}" alt="Association adapai88">
         </a>
-
       </div>
 
       <div class="col">
-
         <p>AEIM54</p>
-
         <a href="http://www.aeim54.fr/">
-          <img src="../../assets/images/clients/aeim54.jpg" alt="Association AEIM54">
+          <img src="{{ asset ('/images/clients/aeim54.jpg')}}" alt="Association AEIM54">
         </a>
-
       </div>
 
       <div class="col">
-
         <p>Agence Immobilière de la Ravinelle</p>
-
         <a href="http://www.immoravi.com/">
-         <img src="../../assets/images/clients/immoravi.jpg" alt="immoravi">
+        <img src="{{ asset ('/images/clients/immoravi.jpg')}}" alt="immoravi">
         </a>
-
       </div>
-
     </div>
 
+    <!-- Rangée 2 -->
     <div class="row">
-
       <div class="col">
-
         <p>CMSEA</p>
-
         <a href="https://www.cmsea.asso.fr/">
-         <img src="../../assets/images/clients/cmsea.jpg" alt="Association CMSEA">
+        <img src="{{ asset ('/images/clients/cmsea.jpg') }}" alt="Association CMSEA">
         </a>
-
       </div>
 
       <div class="col">
-
         <p>Les Papillons Blancs</p>
-
         <a href="https://pbesl.fr/">
-          <img src="../../assets/images/clients/pbesl.jpg" alt="Les Papillons Blancs">
+          <img src="{{ asset ('/images/clients/pbesl.jpg') }}" alt="Les Papillons Blancs">
         </a>
-
       </div>
 
       <div class="col">
-
         <p>YSOS</p>
-
         <a href="http://www.ysos.fr/">
-          <img src="../../assets/images/clients/ysos.jpg" alt="ysos">
+          <img src="{{ asset ('/images/clients/ysos.jpg') }}" alt="ysos">
         </a>
-
       </div>
-
     </div>
-
   </div>
   <!-- fin bloc client -->
 
@@ -100,7 +79,7 @@
       <div class="col-md">
 
         <a href="https://www.hp.com/fr" target="_blank" id="hp">
-          <img src="../../assets/images/partenaires/hp.png"
+          <img src="{{ asset ('/images/partenaires/hp.png') }}"
           alt="HP">
         </a>
 
@@ -109,7 +88,7 @@
       <div class="col-md">
 
         <a href="https://www.ibm.com/fr" target="_blank">
-          <img src="../../assets/images/partenaires/ibm.png"
+          <img src="{{ asset ('/images/partenaires/ibm.png') }}"
           alt="IBM">
         </a>
 
@@ -117,7 +96,7 @@
 
       <div class="col-md">
         <a href="https://www.intel.fr" target="_blank">
-          <img src="../../assets/images/partenaires/intel.png"
+          <img src="{{ asset ('/images/partenaires/intel.png') }}"
           alt="Intel">
         </a>
       </div>
@@ -125,7 +104,7 @@
       <div class="col-md">
 
         <a href="http://www.libertech.fr" target="_blank">
-          <img src="../../assets/images/partenaires/libertech.png"
+          <img src="{{ asset ('/images/partenaires/libertech.png') }}"
           alt="Libertech">
         </a>
 
@@ -134,7 +113,7 @@
       <div class="col-md">
 
         <a href="https://www.microsoft.com/fr-fr" target="_blank" id="ms">
-          <img src="../../assets/images/partenaires/microsoft.png"
+          <img src="{{ asset ('/images/partenaires/microsoft.png') }}"
           alt="Microsoft">
         </a>
 
@@ -143,7 +122,7 @@
       <div class="col-md">
 
         <a href="https://www.mysql.com/fr/" target="_blank">
-          <img src="../../assets/images/partenaires/mysql.png"
+          <img src="{{ asset ('/images/partenaires/mysql.png') }}"
           alt="MySQL">
         </a>
 
@@ -152,7 +131,7 @@
       <div class="col-md">
 
         <a href="https://www.oracle.com/fr/index.html" target="_blank">
-          <img src="../../assets/images/partenaires/oracle.png"
+          <img src="{{ asset ('/images/partenaires/oracle.png') }}"
           alt="Oracle">
         </a>
 
@@ -161,7 +140,7 @@
       <div class="col-md">
 
         <a href="https://www.php.net/" target="_blank">
-          <img src="../../assets/images/partenaires/php.png"
+          <img src="{{ asset ('/images/partenaires/php.png') }}"
           alt="PHP">
         </a>
 
@@ -170,7 +149,7 @@
       <div class="col-md">
 
         <a href="http://www.proget.fr/" target="_blank">
-          <img src="../../assets/images/partenaires/proget.png"
+          <img src="{{ asset ('/images/partenaires/proget.png') }}"
           alt="Pro'Get EVR">
         </a>
 
@@ -179,7 +158,7 @@
       <div class="col-md">
 
         <a href="https://www.trendmicro.com/fr_fr" target="_blank">
-          <img src="../../assets/images/partenaires/trendMicro.png"
+          <img src="{{ asset ('/images/partenaires/trendMicro.png') }}"
           alt="trendMicro">
         </a>
 

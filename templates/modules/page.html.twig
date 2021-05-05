@@ -41,7 +41,7 @@
 				{# Condition pour voir si une image est dispo alors on affiche la div #}
 				{% if page.image %}
 				<div class="bloc-image">
-					{# <img src="{{asset ('images/imagesModules/' ~ page.image )}}" alt="{{ module.titre }}"></img>			 #}
+					<img src="{{asset ('images/imagesModules/' ~ page.image )}}" alt="{{ page.sousTitre }}"></img>			
 				</div>
 				{% endif %}
 		</div>
