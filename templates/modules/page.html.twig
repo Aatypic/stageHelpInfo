@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="container" id="container">
 		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
@@ -46,25 +46,29 @@
 				{% endif %}
 		</div>
 			{% endfor %}
-			<!-- Bas de page Pagination -->
-			{% set pagesTotal = (total / limit)| round(0, 'ceil') %}
-			<nav aria-label="Page navigation"></nav>
-				<ul class="pagination">
-					<li class="page-item {{(page == 1) ? 'disabled' : ''}}">
-						<a class="page-link" href="{{( page > 1 ) ? '?page=' ~ (page - 1) : '' }}" aria-label="previous">Précédente</a>
-					</li>
-					{% for item in 1..pagesTotal %}
-					{# On fait une ternaire, Si page est égale a item, ALORS? j'écris 'active' SINON: j'écris rien '' #}
-					<li class="page-item {{(page == item) ? 'active' : ''}}">
-						<a class="page-link" href="?page={{ item }}">{{ item }}</a>
-					</li>
-					{% endfor %}
-					<li class="page-item {{(page == pagesTotal) ? 'disabled' : ''}}">
-						<a class="page-link" href="{{( page < pagesTotal ) ? '?page=' ~ (page + 1) : '' }}" aria-label="next">Suivante</a>
-					</li>
-				</ul>
-			</nav>
-		
 	</div>
-
+	<div class="container pagination-container">
+		<!-- Bas de page Pagination -->
+		{% set pagesTotal = (total / limit)| round(0, 'ceil') %}
+		<nav aria-label="Page navigation"></nav>
+			<ul class="pagination">
+				{# On fait une ternaire, Si page est égale a 1, ALORS? j'écris 'disabled' SINON: j'écris rien '' #}
+				<li class="page-item {{(page == 1) ? 'disabled' : ''}}">
+					<a class="page-link" href="{{( page > 1 ) ? '?page=' ~ (page - 1) : '' }}" aria-label="previous">Précédente</a>
+				</li>
+				{% for item in 1..pagesTotal %}
+				{# On fait une ternaire, Si page est égale a item, ALORS? j'écris 'active' SINON: j'écris rien '' #}
+				<li class="page-item {{(page == item) ? 'active' : ''}}">
+					<a class="page-link" href="?page={{ item }}">{{ item }}</a>
+				</li>
+				{% endfor %}
+				{# On fait une ternaire, Si page est égale aux nombres de pages total, ALORS? j'écris 'disabled' SINON: j'écris rien '' #}
+				<li class="page-item {{(page == pagesTotal) ? 'disabled' : ''}}">
+					<a class="page-link" href="{{( page < pagesTotal ) ? '?page=' ~ (page + 1) : '' }}" aria-label="next">Suivante</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	
+	{{ dump() }}
 {% endblock %}

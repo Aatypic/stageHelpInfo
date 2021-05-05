@@ -80,10 +80,33 @@
 			<div class="container-fluid bg-light p-5 " id="banner-bg">
 				<div class="logged-in mb-3">
 					{% if app.user %}
-						<i class="bi bi-person-circle"></i> {{ app.user.username }} <a href="{{ path('app_logout') }}">
-						<i class="bi bi-box-arrow-right"></i>Se déconnecter</a>
+						<!-- Default dropstart button -->
+						<div class="btn-group dropstart d-none d-lg-block">
+						<button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownLogin" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="bi bi-person-circle"></i>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownLogin">
+							<li><h6 class="dropdown-header">{{ app.user.username }}</h6></li>
+							<li><a class="dropdown-item" href="{{ path ('modules')}}">Accéder aux modules</a></li>
+							<li><a class="dropdown-item" href="#footer">Contact</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item log-link " href="{{ path ('app_logout') }}">Se déconnecter</a></li>
+						</ul>
+						</div>
+					{# SI l'on est pas connecté #}
 					{% else %}
-						<i class="bi bi-person-circle"></i><a href="{{ path ('app_login') }}">Se connecter</a>
+					<div class="btn-group dropstart d-none d-lg-block">
+						<button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownLogin" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="bi bi-person-circle"></i>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownLogin">
+							{# <li><a class="dropdown-item" href="#">Connexion</a></li> #}
+							<li><a class="dropdown-item" href="{{ path ('modules')}}">Accéder aux modules</a></li>
+							<li><a class="dropdown-item" href="#footer">Contact</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item log-link" href="{{ path ('app_login') }}">Se connecter</a></li>
+						</ul>
+						</div>
     				{% endif %}
 				</div>
 				<div class="text-center" id="textBanner">

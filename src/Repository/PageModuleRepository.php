@@ -25,21 +25,23 @@ class PageModuleRepository extends ServiceEntityRepository
      * Returns all PageModule per page
      * @return void
      */
-    public function getPaginatedPageModule($page, $limit){
+    public function getPaginatedPageModule($module, $page, $limit){
         $query = $this->createQueryBuilder('a')
         ->setFirstResult(($page * $limit) -$limit)
         ->setMaxResults($limit)
+        ->where('a.modules = ?1')->setParameter(1, $module)
         ;
         return $query->getQuery()->getResult();
     }
     
     /**
-     * Returns numbers of Pages d'un Module
+     * Returns nombre total de Pages d'un Module
      * @return void
      */
-    public function getTotalPageModule(){
+    public function getTotalPageModule($module){
         $query = $this->createQueryBuilder('a')
             ->select('COUNT(a)')
+            ->where('a.modules = ?1')->setParameter(1, $module)
             ;
         return $query->getQuery()->getSingleScalarResult();
 

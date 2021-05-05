@@ -1,6 +1,9 @@
-/* #80cdbb vert de la bannière--
--- #428ab2 bleu de la ""
--- #234fa1 dark bleu " " -------
+/* Couleurs du site
+-- #80cdbb -- vert de la bannière
+-- #428ab2 -- bleu de la bannière
+-- #234fa1 -- dark bleu bannière
+-- #64c0be -- vert du milieu de bannière
+-- #f8f9fb -- background-color: blanc cassé de bootstrap des .card
 */
 
 
@@ -113,29 +116,49 @@ body {
 
 /* Bloc logged-in de l'utilisateur */
 .logged-in {
+  position: fixed;
+  top: 72px;
+  right: 0;
   justify-content: space-around;
   text-align: right;
   padding-right: 1rem;
-  position: fixed;
-  top: 91px;
-  right: 0;
+  border: none;
+  padding: .75em;
+  color: white;
+  display: flex;
 }
 
-.logged-in a {
-  text-decoration: none;
+button#dropdownLogin {
+  background-color: #f8f9fb;
+  color:#2366ac;
+  border-color: #f8f9fa;
+}
+button#dropdownLogin:hover, button#dropdownLogin:focus {
+  box-shadow: inset -1px 1px 6px 0px #64c0be;
+}
+
+.dropdown-item {
+  font-size: .875em;
+}
+.log-link {
   font-weight: bold;
+}
+.add-background {
+  box-shadow: 0px 4px 8px 0px #234fa1;
+  background-color:#2366ac ;
+  /* background-color: #f8f9fb; */
+  border-bottom-left-radius: 0.5em;
+
+}
+.logged-in a {
+  
+  text-decoration: none;
   color: unset;
   transition: border 0.2s linear;
 }
 
-.logged-in a:hover,
-.logged-in a:focus {
-  border-bottom: linear-gradient(to right, #428ab2, #419cb9,
-      #4dadbc, #64bebc, #80cdbb) 3px solid;
-}
-
 .bi {
-  font-size: 19px;
+  font-size: 23px;
 }
 
 
@@ -270,6 +293,11 @@ em {
 }
 
 @media screen and (max-width: 768px) {
+
+  /* Réduction sur 2 lignes de .logged-in User et Logout */
+  .logged-in {
+    flex-direction: column;
+  }
 
   /*reduction hauteur de bannière pour mobile*/
   #banner-bg {

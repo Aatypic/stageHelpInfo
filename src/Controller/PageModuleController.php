@@ -13,38 +13,45 @@ use Symfony\Component\HttpFoundation\Response;
 
 
 /**
- * @Route("/page", name="page-module_")
+ * @Route("/modules/{slug}", name="page-module_")
  * @package App\Controller
  */
 class PageModuleController extends AbstractController
 {
     /**
-     *  @Route("/{slug}", name="page")
+     *  @Route("/", name="page")
      */
-    public function index(PageModuleRepository $pageModuleRepo, Request $request){
+    public function index(PageModuleRepository $pageModuleRepo, ModulesRepository $modulesRepo, Modules $modules, Request $request){
         //On définit le nombre d'éléments par page
         $limit = 1;
         
         //On récupère le numéro de page
         $page = (int)$request->query->get("page", 1);
         
+        $routeParameters = $request->attributes->get('_route_params');
+        
+        $modulesId = $modulesRepo->findIdBySlug($routeParameters['slug']);
+        
         //On récupère la pagemodule de la page
-        $pageModule = $pageModuleRepo->getPaginatedPageModule($page, $limit);
+        $pageModule = $pageModuleRepo->getPaginatedPageModule($modulesId, $page, $limit);
 
         // On récupère le nombre total de pagemodule
-        $total = $pageModuleRepo->getTotalPageModule();
+        $total = $pageModuleRepo->getTotalPageModule($modulesId);
 
-        return $this->render('modules/page.html.twig', compact('pageModule', 'total', 'limit', 'page'));
+        // On récupère les infos des modules 'titre''nbPages''slug'
+        // $modules = $modulesRepo->find($id);
+
+        return $this->render('modules/page.html.twig', compact('pageModule', 'total', 'limit', 'page', 'routeParameters'));
         }
 
 
-    public function page(ModulesRepository $modulesRepo, PageModuleRepository $pageModuleRepo)
+    public function page(Modules $modules /* PageModuleRepository $pageModuleRepo */)
     
     {
         return $this->render('modules/page.html.twig', [
-            'module' => $modulesRepo->findAll(),
-            'pageModule' => $pageModuleRepo->findAll()
-        ]);
+            'module' => $modules,
+            //'pageModule' => $pageModuleRepo->findAll()
+
     }
 
 

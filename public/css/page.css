@@ -7,3 +7,18 @@
     margin: 0;
 }
 
+
+#container {
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,.125);
+    background-color: white;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pagination-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}

@@ -19,6 +19,13 @@ class ModulesRepository extends ServiceEntityRepository
         parent::__construct($registry, Modules::class);
     }
 
+
+    public function findIdBySlug($slug)
+    {
+        return $this->createQueryBuilder('m')->where('m.slug = ?1 ')->setParameter(1, $slug)->getQuery()->getResult();
+
+    }
+
     // /**
     //  * @return Modules[] Returns an array of Modules objects
     //  */
