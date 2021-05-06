@@ -76,6 +76,10 @@ button {
     font-size: 23px;
 }
 
+.inscription a {
+    color: blue;
+    letter-spacing: normal;
+}
 
 
 /* ------DROITE l'image de stan NONE EN MOBILE------ */

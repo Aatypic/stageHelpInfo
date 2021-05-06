@@ -1,15 +1,24 @@
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
+
+{# Page de confirmation d'email, avec invite de cliquer sur le lien #}
 {% extends 'base.html.twig' %}
 
 {% block title %}S'inscrire{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href=""{{ asset ('css/styles.css')}}>
+{% endblock %}
+
 {% block body %}
+    <div class="container">
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
-
     <h1>S'inscrire</h1>
-
     {{ form_start(registrationForm) }}
+        
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
@@ -18,4 +27,5 @@
 
         <button type="submit" class="btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}

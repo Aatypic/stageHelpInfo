@@ -1,10 +1,19 @@
-{% extends 'base.html.twig' %}
+{# Projet de stage help info, conceptions des modules #}
+{# Abeauzit-Tahiri Alexandre al.atahiri@gmail.com#}
+{# Mars 2021 - Mai 2021 #}
 
-{% block banner %}
-    <h1>Réinitialisation de mot de passe envoyé</h1>
+{# Page de confirmation d'email, avec invite de cliquer sur le lien #}
+{% extends "base.html.twig" %}
+
+{% block title %}Réinitialisation de mot de passe envoyé
 {% endblock %}
 
-{% block title %}Réinitialisation de mot de passe envoyé{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href=""{{ asset ('css/reset.css')}}>
+{% endblock %}
+
+{% block banner %}<h1>Réinitialisation de mot de passe envoyé</h1>
+{% endblock %}
+
 
 {% block body %}
     <p>

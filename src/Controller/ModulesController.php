@@ -15,9 +15,9 @@ class ModulesController extends AbstractController
      */
     public function modules(): Response
     {
-        $repo = $this->getDoctrine()->getRepository(Modules::class);
+        $repoM = $this->getDoctrine()->getRepository(Modules::class);
 
-        $modules = $repo->findAll();
+        $modules = $repoM->findAll();
 
         return $this->render('modules/modules.html.twig', [
             'modules' => $modules

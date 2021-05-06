@@ -1,7 +1,6 @@
 /* -------------------------------
 --------VUE en MOBILE-FIRST-------
 ---------------------------------- */
-
 /* DIV container */
 
 /* ------DIV d-grid gap-3 bloc-modules -------*/
@@ -22,7 +21,7 @@
   grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
   grid-template-rows: auto;
   grid-template-areas:
-    "type type pourcent pourcent"
+    "titre titre pourcent pourcent"
     "titre titre titre titre"
     ". . pages pages";
 }
@@ -41,13 +40,13 @@
 }
 
 /* h3 .type-module */
-h3 {
+/* h3 {
   grid-area: type;
   font-size: 1em;
   color: #565656;
   font-style: italic;
   font-weight: bold;
-}
+} */
 
 /* h2 .title-module */
 h2 {
@@ -66,8 +65,9 @@ h2 {
 }
 
 /* ---------------------------------
-------------MEDIA QUERRIES-----------
--------------------------------------- */
+------------MEDIA QUERRIES----------
+-------------VUE BUREAU------------- 
+------------------------------------*/
 @media screen and (min-width: 768px) {
 
   .content .container {
@@ -84,17 +84,16 @@ h2 {
     height: 120px;
   }
   .module-card {
-    grid-template-columns: 0.1fr repeat(2, 1fr) 0.4fr;
+    grid-template-columns: repeat(2, 1fr) 0.4fr;
     grid-template-areas:
-      "type type . pourcent"
-      ". titre titre ."
-      ". titre titre pages";
+      "titre titre pourcent"
+      "titre titre pages";
   }
   .gap-3 {
     gap: 1.5rem !important;
   }
 
   .pourcent, .pages-module {
-    justify-self: center;
+    align-self: center;
   }
 }
