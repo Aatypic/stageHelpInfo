@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block banner %}
-	{# <h1>Module :  {{ module.titre }}</h1> #}
+	<h1>{{ modules.titre }}</h1>
 {% endblock %}
 
 {% block body %}
@@ -20,13 +20,16 @@
 				<li class="breadcrumb-item">
 					<a href="{{ path ('modules')}}">Modules</a>
 				</li>
-				{# <li class="breadcrumb-item active" aria-current="page">{{ module.titre }}</li> #}
+				<li class="breadcrumb-item " aria-current="page">{{ modules.titre }}</li>
+				{% for page in pageModule %}
+					<li class="breadcrumb-item active" aria-current="page">{{ page.sousTitre }}</li>					
+				{% endfor %}
 			</ul>
 		</nav>
 		<div class="intro-banner">
-			{# <h2>{{ module.titre}}</h2> #}
+			<h2>{{ modules.titre}}</h2>
 			<span class="pourcent">ici %!</span>
-			{# <span class="pages">{{ module.nbPages }} #}
+			<span class="pages">{{ modules.nbPages }}
 				pages</span>
 			<hr>
 		</div>
@@ -34,7 +37,7 @@
 		<!-- Bloc avec le contenu de la pageModule -->
 		<div class="d-grid bloc-page">
 			{% for page in pageModule %}
-				<div class="bloc-text mb-3">
+				<div class="bloc-text">
 				<h3>{{ page.sousTitre | raw }}</h3>
 				<p>{{ page.text | raw }}</p>
 			</div>
@@ -51,7 +54,7 @@
 		<!-- Bas de page Pagination -->
 		{% set pagesTotal = (total / limit)| round(0, 'ceil') %}
 		<nav aria-label="Page navigation"></nav>
-			<ul class="pagination flex-wrap">
+			<ul class="pagination">
 				{# On fait une ternaire, Si page est égale a 1, ALORS? j'écris 'disabled' SINON: j'écris rien '' #}
 				<li class="page-item {{(page == 1) ? 'disabled' : ''}}">
 					<a class="page-link" href="{{( page > 1 ) ? '?page=' ~ (page - 1) : '' }}" aria-label="previous">Précédente</a>

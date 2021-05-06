@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Modules;
 use App\Entity\PageModule;
 use App\Form\PageModuleType;
 use App\Repository\ModulesRepository;
@@ -20,10 +21,11 @@ class PageModuleController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(PageModuleRepository $pageModuleRepo): Response
-    {
+    public function index(PageModuleRepository $pageModuleRepo, Modules $modulesRepo): Response
+    {   
         return $this->render('admin/page-module/index.html.twig', [
-            'pageModule' => $pageModuleRepo->findAll()
+            'pageModule' => $pageModuleRepo->findAll(),
+            // 'modules' => $modulesRepo->getTitre()
         ]);
     }
 

@@ -25,7 +25,7 @@
       <th scope="col">ID</th>
       <th scope="col">Sous-titre</th>
       <th scope="col">Page numéro </th>
-      {# <th scope="col">Titre du module</th> #}
+      <th scope="col">Titre du module</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -35,7 +35,7 @@
       <th scope="row">{{page.id}}</th>
       <td>{{page.sousTitre}}</td>
       <td>{{page.page}}</td>
-      {# <td>{{module.titre}}</td> #}
+      <td>{{page.modules.slug}}</td>
       <td class="">
         {# ce qu'il faut c'est lui passer en plus, sous forme Json un id qui est page.id #}
         <a href="{{ path ('admin_page-module_modifier', {id: page.id})}}" class="btn btn-outline-success"><i class="bi bi-pencil"></i> Modifier</a>
@@ -68,6 +68,9 @@
   </tbody>
 </table>
 </div>
+
+{{ dump() }}
+
 {% endblock %}
 
 {% block javascripts %}

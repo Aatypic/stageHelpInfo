@@ -21,7 +21,7 @@ class PageModuleController extends AbstractController
     /**
      *  @Route("/", name="page")
      */
-    public function index(PageModuleRepository $pageModuleRepo, ModulesRepository $modulesRepo, Modules $modules, Request $request){
+    public function index(PageModuleRepository $pageModuleRepo, ModulesRepository $modulesRepo, Modules $id, Request $request){
         //On définit le nombre d'éléments par page
         $limit = 1;
         
@@ -39,9 +39,9 @@ class PageModuleController extends AbstractController
         $total = $pageModuleRepo->getTotalPageModule($modulesId);
 
         // On récupère les infos des modules 'titre''nbPages''slug'
-        // $modules = $modulesRepo->find($id);
+        $modules = $modulesRepo->find($id);
 
-        return $this->render('modules/page.html.twig', compact('pageModule', 'total', 'limit', 'page', 'routeParameters'));
+        return $this->render('modules/page.html.twig', compact('pageModule', 'total', 'limit', 'page', 'routeParameters', 'modules'));
         }
 
 
