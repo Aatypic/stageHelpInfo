@@ -20,5 +20,34 @@
 .pagination-container {
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 0!important; /* aligne le bloc de pagniation avec le bloc du contenu du dessus */
 
 }
+
+/* ajouter 23mars pour la page intro et page contenu */
+.intro-banner {
+display: flex;
+flex-flow: row wrap;
+}
+
+/* pour utiliser tout l'espace des 100% via flex basis */
+.intro-banner>* {
+flex: 1 100%;
+}
+
+.intro-banner h2 {
+flex: 4;
+}
+
+.intro-banner span {
+text-align: end;
+}
+
+.intro-banner span:nth-of-type(1) {
+flex: 1;
+}
+
+.intro-banner span:nth-of-type(2) {
+flex: 1;
+}
+

@@ -39,9 +39,13 @@ form div {
 /* Le label */
 
 /* div + class d-grid */
+
 /* Le button avec class btn btn-primary */
 /* gradient du btn-primary */
 /* https://mycolor.space/gradient?ori=to+left&hex=%23428AB2&hex2=%2380CDBB&sub=1 */
+button {
+    align-items: center;
+}
 .btn-primary{
     background-image: linear-gradient(to right, #428ab2, #419cb9, 
                     #4dadbc, #64bebc, #80cdbb);
@@ -57,10 +61,16 @@ form div {
                     #4dadbc, #64bebc, #80cdbb);
 }
 /* le texte de d'aide ? */
+.help-login p {
+    font-size: 0.75em;
+
+}
+
 .help-login a {
     text-decoration: none;
     color: rgb(51, 51, 51);
     font-weight: bolder;
+    letter-spacing: 1px;
 }
 .bi-question-circle-fill{
     font-size: 23px;

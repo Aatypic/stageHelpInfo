@@ -2,6 +2,9 @@
 
 
 
+
+
+
 // Ajoute l'ombre sur la navbar quand on descend la molette souris.
 
 window.addEventListener('scroll',(e)=>{

@@ -30,7 +30,6 @@
   box-shadow: 0px 4px 8px 0px #234fa1;
 }
 
-
 #assistance {
   color: #ff944d;
   font-weight: bold;
@@ -39,6 +38,36 @@
 #assistance:hover {
   color: #ff751a;
 }
+
+/* Bloc logged-in de l'utilisateur */
+.logged-in {
+  position: fixed;
+  z-index: 900;
+  top: 72px;
+  right: 0;
+  justify-content: space-around;
+  text-align: right;
+  padding-right: 1rem;
+  border: none;
+  padding: .75em;
+  color: white;
+  display: flex;
+}
+
+
+.logged-in a {
+  
+  text-decoration: none;
+  color: unset;
+  transition: border 0.2s linear;
+}
+
+.bi {
+  font-size: 23px;
+}
+
+
+
 
 /*taille de la bannière, lien vers l'image*/
 /* modification/ajout 19mars adapatation Bootstrap v5 */
@@ -84,83 +113,6 @@ body {
 body {
   padding-top: 70px;
 }
-
-/* ajouter 23mars pour la page intro et page contenu */
-.intro-banner {
-  display: flex;
-  flex-flow: row wrap;
-
-}
-
-/* pour utiliser tout l'espace des 100% via flex basis */
-.intro-banner>* {
-  flex: 1 100%;
-}
-
-.intro-banner h2 {
-  flex: 4;
-}
-
-.intro-banner span {
-  text-align: end;
-}
-
-.intro-banner span:nth-of-type(1) {
-  flex: 1;
-}
-
-.intro-banner span:nth-of-type(2) {
-  flex: 1;
-}
-
-
-/* Bloc logged-in de l'utilisateur */
-.logged-in {
-  position: fixed;
-  top: 72px;
-  right: 0;
-  justify-content: space-around;
-  text-align: right;
-  padding-right: 1rem;
-  border: none;
-  padding: .75em;
-  color: white;
-  display: flex;
-}
-
-button#dropdownLogin {
-  background-color: #f8f9fb;
-  color:#2366ac;
-  border-color: #f8f9fa;
-}
-button#dropdownLogin:hover, button#dropdownLogin:focus {
-  box-shadow: inset -1px 1px 6px 0px #64c0be;
-}
-
-.dropdown-item {
-  font-size: .875em;
-}
-.log-link {
-  font-weight: bold;
-}
-.add-background {
-  box-shadow: 0px 4px 8px 0px #234fa1;
-  background-color:#2366ac ;
-  /* background-color: #f8f9fb; */
-  border-bottom-left-radius: 0.5em;
-
-}
-.logged-in a {
-  
-  text-decoration: none;
-  color: unset;
-  transition: border 0.2s linear;
-}
-
-.bi {
-  font-size: 23px;
-}
-
 
 /* Pourcentage de progression de l'utilisateur */
 .pourcent {
@@ -244,7 +196,6 @@ em {
 }
 
 
-
 /* ---------------------------------
 ------------MEDIA QUERRIES-----------
 -------------------------------------- */
@@ -287,25 +238,44 @@ em {
     height: auto;
     transform: none;
     margin-left: none;
-
   }
 
 }
+@media screen and (min-width: 768px) {
 
-@media screen and (max-width: 768px) {
+/*reduction hauteur de bannière pour mobile*/
+#banner-bg {
+  min-height: 175px;
+}
 
-  /* Réduction sur 2 lignes de .logged-in User et Logout */
-  .logged-in {
-    flex-direction: column;
+#footer {
+  padding-top: unset;
+}
+
+
+}
+@media screen and (min-width: 768px) {
+
+  button#dropdownLogin {
+    background-color: #f8f9fb;
+    color:#2366ac;
+    border-color: #f8f9fa;
   }
-
-  /*reduction hauteur de bannière pour mobile*/
-  #banner-bg {
-    min-height: 175px;
+  button#dropdownLogin:hover, button#dropdownLogin:focus {
+    box-shadow: inset -1px 1px 6px 0px #64c0be;
   }
-
-  #footer {
-    padding-top: unset;
+  
+  .dropdown-item {
+    font-size: .875em;
+  }
+  .log-link {
+    font-weight: bold;
+  }
+  .add-background {
+    box-shadow: 0px 4px 8px 0px #234fa1;
+    background-color:#2366ac ;
+    /* background-color: #f8f9fb; */
+    border-bottom-left-radius: 0.5em;
   }
 
 }

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-  <link rel="stylesheet" href="assets/css/assistance.css">
+  <link rel="stylesheet" href="{{ asset ('')}}/css/assistance.css">
 {% endblock %}
 
 {% block banner %}
@@ -12,55 +12,31 @@
 
   <div class="container">
     <div class="row text-center">
-
       <div class="col-12">
         <h5>Par téléphone au 03 83 44 55 49 avec prise en main à distance</h5>
         <hr id="hrHoriz">
       </div>
-
     </div>
 
     <div class="row justify-content-around text-center">
-
       <div class="col-lg-5">
-
         <h3>Teamviewer</h3>
-
-        <p>
-          1 - Télécharger l'outil Teamviewer de prise en main à distance en cliquant sur le bouton ci-dessous
-        </p>
-
-        <a href="/assets/ddl/TeamViewerQS_fr.exe" type="button" class="btn btn-success" id="teamviewer">
-          Télécharger
-        </a>
-
-        <p>
-          2 - Communiquez-nous votre ID et votre mot de passe
-        </p>
-
-        <img src="/assets/images/teamViewer.png" alt="TeamViewer">
-
+        <p>1 - Télécharger l'outil Teamviewer de prise en main à distance en cliquant sur le bouton ci-dessous</p>
+        <a href="{{ asset ('ddl/TeamViewerQS_fr.exe')}}" type="button" class="btn btn-success" id="teamviewer">Télécharger</a>
+        <p>2 - Communiquez-nous votre ID et votre mot de passe</p>
+        <img src="{{ asset ('images/teamViewer.png')}}" alt="TeamViewer">
         <hr id="hrHoriz">
-
       </div>
 
       <div class="col-lg-5">
-
         <h3>AnyDesk</h3>
-
-        <p>
-         1 - Télécharger l'outil AnyDesk de prise en main à distance en cliquant sur le bouton ci-dessous
-        </p>
-
-        <a href="/assets/ddl/AnyDesk.exe" type="button" class="btn btn-success" id="anydesk">
+        <p>1 - Télécharger l'outil AnyDesk de prise en main à distance en cliquant sur le bouton ci-dessous</p>
+        <a href="{{ asset ('ddl/AnyDesk.exe')}}" type="button" class="btn btn-success" id="anydesk">
           Télécharger
         </a>
-
         <p>2 - Communiquez-nous votre identifiant </p>
-
-        <img src="/assets/images/anydesk.png" alt="AnyDesk">
-
-
+        <img src="{{ asset ('images/anydesk.png')}}" alt="AnyDesk">
+        <hr id="hrHoriz">
       </div>
 
     </div>

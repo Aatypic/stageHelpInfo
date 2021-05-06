@@ -34,7 +34,7 @@
 		<!-- Bloc avec le contenu de la pageModule -->
 		<div class="d-grid bloc-page">
 			{% for page in pageModule %}
-				<div class="bloc-text">
+				<div class="bloc-text mb-3">
 				<h3>{{ page.sousTitre | raw }}</h3>
 				<p>{{ page.text | raw }}</p>
 			</div>
@@ -51,7 +51,7 @@
 		<!-- Bas de page Pagination -->
 		{% set pagesTotal = (total / limit)| round(0, 'ceil') %}
 		<nav aria-label="Page navigation"></nav>
-			<ul class="pagination">
+			<ul class="pagination flex-wrap">
 				{# On fait une ternaire, Si page est égale a 1, ALORS? j'écris 'disabled' SINON: j'écris rien '' #}
 				<li class="page-item {{(page == 1) ? 'disabled' : ''}}">
 					<a class="page-link" href="{{( page > 1 ) ? '?page=' ~ (page - 1) : '' }}" aria-label="previous">Précédente</a>
