@@ -51,6 +51,11 @@ class PageModule
      */
     private $page;
 
+    //-----Ici on créer une fonction pour permettre à notre EntityType comme ca on bien les noms des Modules 
+    public function __toString()
+    {
+        return $this->page;
+    }
 
     public function getId(): ?int
     {

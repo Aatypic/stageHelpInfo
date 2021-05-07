@@ -132,14 +132,6 @@ class SiteController extends AbstractController
         return $this->render('site/media.html.twig');
     }
 
-    /**
-     *  @Route("/intro", name="intro")
-     */
-    public function module(): Response
-    {
-        return $this->render('modules/intro.html.twig');
-    }
-
 
     /**
      * @Route("/quizz", name="quizz")

@@ -10,10 +10,15 @@
 {% endblock %}
 
 {% block banner %}
-	<h1>{{ modules.titre }}</h1>
+	{% for page in pageModule %}
+	<h1>{{ page.sousTitre }}</h1>
+	{% endfor %}
 {% endblock %}
 
 {% block body %}
+{% set pagesTotal = (total / limit)| round(0, 'ceil') %}
+{% set pagesPercentage = (page / pagesTotal) *100 %}
+	{% for page in pageModule %}
 	<div class="container" id="container">
 		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
 			<ul class="breadcrumb">
@@ -21,38 +26,43 @@
 					<a href="{{ path ('modules')}}">Modules</a>
 				</li>
 				<li class="breadcrumb-item " aria-current="page">{{ modules.titre }}</li>
-				{% for page in pageModule %}
+					
 					<li class="breadcrumb-item active" aria-current="page">{{ page.sousTitre }}</li>					
-				{% endfor %}
+				
 			</ul>
 		</nav>
 		<div class="intro-banner">
-			<h2>{{ modules.titre}}</h2>
-			<span class="pourcent">ici %!</span>
-			<span class="pages">{{ modules.nbPages }}
-				pages</span>
-			<hr>
+			<div class="titre">
+				<h3>{{ modules.titre}}</h3>
+			</div>
+			<span class="d-block pourcent">{{ pagesPercentage | round (-1, 'common')}}<i class="bi bi-percent"></i></span>
+			<span class="d-block pages">{{page.page}} / {{ modules.nbPages }} <i class="bi bi-book-half"></i></span>
 		</div>
-
+		<hr>
+				{% endfor %}
 		<!-- Bloc avec le contenu de la pageModule -->
 		<div class="d-grid bloc-page">
 			{% for page in pageModule %}
-				<div class="bloc-text">
+			<div class="bloc-text">
 				<h3>{{ page.sousTitre | raw }}</h3>
 				<p>{{ page.text | raw }}</p>
 			</div>
-				{# Condition pour voir si une image est dispo alors on affiche la div #}
-				{% if page.image %}
-				<div class="bloc-image">
-					<img src="{{asset ('images/imagesModules/' ~ page.image )}}" alt="{{ page.sousTitre }}"></img>			
-				</div>
-				{% endif %}
+			
+			{% if page.image %}{# Condition pour voir si une image est dispo alors on affiche la div #}
+			<div class="bloc-image">
+				<img src="{{asset ('images/imagesModules/' ~ page.image )}}" alt="{{ page.sousTitre }}"></img>			
+			</div>
+				{% else %}
+			{% endif %}
+				{# <div class="{{(page == pagesPercentage) ? 'show' : 'hidden' }}">
+					<a href="{{ path ('quizz') }}" class="btn btn-success">Passer au Quizz</a>
+				</div> #}
 		</div>
 			{% endfor %}
 	</div>
 	<div class="container pagination-container">
 		<!-- Bas de page Pagination -->
-		{% set pagesTotal = (total / limit)| round(0, 'ceil') %}
+		
 		<nav aria-label="Page navigation"></nav>
 			<ul class="pagination">
 				{# On fait une ternaire, Si page est égale a 1, ALORS? j'écris 'disabled' SINON: j'écris rien '' #}

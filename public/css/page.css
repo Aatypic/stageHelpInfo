@@ -1,6 +1,46 @@
 /* -------------------------------
 --------VUE en MOBILE-FIRST-------
 ---------------------------------- */
+#container {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    background-color: white;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+nav {
+    font-size: 0.875em;
+}
+
+.intro-banner {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    grid-template-areas:
+        "titre pourcent"
+        "titre pages";
+}
+
+
+.titre {
+    grid-area: titre;
+}
+
+.pourcent {
+    grid-area: pourcent;
+    justify-self: right;
+}
+
+.pages {
+    grid-area: pages;
+    justify-self: right;
+}
+
+.bloc-page {
+    margin-bottom: 3vh;
+    padding: 2em;
+}
 
 .bloc-image img {
     width: 355px;
@@ -8,46 +48,16 @@
 }
 
 
-#container {
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,.125);
-    background-color: white;
 
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+
+
 
 .pagination-container {
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 0!important; /* aligne le bloc de pagniation avec le bloc du contenu du dessus */
+    padding-left: 0 !important;
+    /* aligne le bloc de pagniation avec le bloc du contenu du dessus */
 
 }
 
 /* ajouter 23mars pour la page intro et page contenu */
-.intro-banner {
-display: flex;
-flex-flow: row wrap;
-}
-
-/* pour utiliser tout l'espace des 100% via flex basis */
-.intro-banner>* {
-flex: 1 100%;
-}
-
-.intro-banner h2 {
-flex: 4;
-}
-
-.intro-banner span {
-text-align: end;
-}
-
-.intro-banner span:nth-of-type(1) {
-flex: 1;
-}
-
-.intro-banner span:nth-of-type(2) {
-flex: 1;
-}
-
