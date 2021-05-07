@@ -14,27 +14,44 @@ nav {
     font-size: 0.875em;
 }
 
-.intro-banner {
+.grid {
+    padding: 0 1em;
     display: grid;
     grid-template-columns: 1fr 0.6fr;
     grid-template-areas:
-        "titre pourcent"
+        "breadcrum pourcent"
+        "titre ."
         "titre pages";
 }
 
+.breadcrum {
+    grid-area: breadcrum;
+}
 
 .titre {
     grid-area: titre;
 }
 
+/* .pourcent,
+.pages {
+    background-color: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
+} */
+
 .pourcent {
     grid-area: pourcent;
     justify-self: right;
+    margin-right: 1.3em;
 }
 
 .pages {
     grid-area: pages;
     justify-self: right;
+    margin-right: 1.3em;
 }
 
 .bloc-page {
@@ -59,5 +76,3 @@ nav {
     /* aligne le bloc de pagniation avec le bloc du contenu du dessus */
 
 }
-
-/* ajouter 23mars pour la page intro et page contenu */

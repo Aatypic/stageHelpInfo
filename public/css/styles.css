@@ -56,7 +56,7 @@
 
 
 .logged-in a {
-  
+
   text-decoration: none;
   color: unset;
   transition: border 0.2s linear;
@@ -118,8 +118,12 @@ body {
 .pourcent {
   grid-area: pourcent;
   justify-self: center;
-  color: orange;
   font-weight: bold;
+}
+
+.pourcent,
+.pages i {
+  color: #2366ac;
 }
 
 #footer {
@@ -241,39 +245,45 @@ em {
   }
 
 }
+
 @media screen and (min-width: 768px) {
 
-/*reduction hauteur de bannière pour mobile*/
-#banner-bg {
-  min-height: 175px;
+  /*reduction hauteur de bannière pour mobile*/
+  #banner-bg {
+    min-height: 175px;
+  }
+
+  #footer {
+    padding-top: unset;
+  }
+
+
 }
 
-#footer {
-  padding-top: unset;
-}
-
-
-}
 @media screen and (min-width: 768px) {
 
   button#dropdownLogin {
     background-color: #f8f9fb;
-    color:#2366ac;
+    color: #2366ac;
     border-color: #f8f9fa;
   }
-  button#dropdownLogin:hover, button#dropdownLogin:focus {
+
+  button#dropdownLogin:hover,
+  button#dropdownLogin:focus {
     box-shadow: inset -1px 1px 6px 0px #64c0be;
   }
-  
+
   .dropdown-item {
     font-size: .875em;
   }
+
   .log-link {
     font-weight: bold;
   }
+
   .add-background {
     box-shadow: 0px 4px 8px 0px #234fa1;
-    background-color:#2366ac ;
+    background-color: #2366ac;
     /* background-color: #f8f9fb; */
     border-bottom-left-radius: 0.5em;
   }
