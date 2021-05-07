@@ -31,7 +31,8 @@
 				<a href="{{ path ('page-module_page', {'slug': module.slug}) }}">
 					<div class="p-2 bg-light border module-card">
 						{# <h3 class="type-module">Modules Get-MS</h3> #}
-						<h4 class="title-module">{{ module.titre }}</h2>
+						<h4 class="title-module">{{ module.titre }}</h4>
+						<p>{{ module.pageModules.sousTitre | join(0) }}</p>
 						<span class="pourcent"><i class="bi bi-percent"></i></span>
 						<div class="pages-module">
 							<span class="nbPages">{{ module.nbPages }}</span>

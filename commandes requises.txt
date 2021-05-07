@@ -1,0 +1,10 @@
+AJOUT CKEDITOR:
+> composer require friendsofsymfony/ckeditor-bundle
+apres il faut faire l'installation de ckeditor
+> symfony console ckeditor:install
+ensuite
+> symfony console assets:install public
+--------------------------------------
+
+
+
